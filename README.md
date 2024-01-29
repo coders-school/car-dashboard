@@ -4,6 +4,8 @@
 1. Download Qt (Creator and Design)
 2. Clone the repository
 3. Open Project in QT Design
+
+   
   ![Picture](Picture/Picture1.jpg)
   ![Picture](Picture/Picture2.jpg)
   ![Picture](Picture/Picture3.jpg)
