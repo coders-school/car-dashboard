@@ -6,16 +6,37 @@ project(CarDashboardApp LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-find_package(QT NAMES Qt6 COMPONENTS Gui Qml Quick)
-find_package(Qt6 REQUIRED COMPONENTS Core Qml Quick)
+if(MSVC)
+    add_compile_options(-W4 /XW)
+else()
+    add_compile_options(-Wall -Wextra -pedantic -Wno-unused-function -Wno-gnu-zero-variadic-macro-arguments -Wconversion -Werror)
+endif()
+
+if (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
+    add_compile_options (-fdiagnostics-color=always)
+elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
+    add_compile_options (-fcolor-diagnostics)
+endif ()
+
+find_package(QT NAMES Qt6 COMPONENTS Core Gui Qml Quick)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Qml Quick)
+
+qt_policy(SET QTP0001 NEW)
 
 # To build this application you need Qt 6.2.0 or higher
 if (Qt6_VERSION VERSION_LESS 6.2.0)
 message(FATAL_ERROR "You need Qt 6.2.0 or newer to build the application.")
 endif()
 
-qt_add_executable(${CMAKE_PROJECT_NAME} src/main.cpp)
+FILE(GLOB SOURCES 
+    "src/*.cpp"
+) 
+
+qt_add_executable(${CMAKE_PROJECT_NAME} 
+    ${SOURCES}
+)
 
 # qt_standard_project_setup() requires Qt 6.3 or higher. See https://doc.qt.io/qt-6/qt-standard-project-setup.html for details.
 if (${QT_VERSION_MINOR} GREATER_EQUAL 3)
