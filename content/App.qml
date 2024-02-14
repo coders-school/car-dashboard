@@ -16,5 +16,9 @@ Window {
 
     }
 
+    MenuButton {
+        id: menuButton
+    }
+
 }
 
