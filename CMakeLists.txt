@@ -51,3 +51,9 @@ install(TARGETS ${CMAKE_PROJECT_NAME}
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
+
+
+enable_testing()
+add_subdirectory(
+    ${CMAKE_CURRENT_SOURCE_DIR}/utest
+)

@@ -6,3 +6,5 @@ FILE(GLOB_RECURSE ALL_HEADERS
     "${CMAKE_SOURCE_DIR}/src/*.hpp"
     "${CMAKE_SOURCE_DIR}/src/*.h"
 )
+
+SET(FILE_MAIN_CPP ${CMAKE_SOURCE_DIR}/src/main.cpp)
