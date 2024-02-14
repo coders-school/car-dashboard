@@ -17,5 +17,5 @@ qt6_add_qml_module(content
         PhoneList.qml
         AirConditionSitControl.qml
         MusicPlayer.qml
-
+        MenuButton.qml
 )
