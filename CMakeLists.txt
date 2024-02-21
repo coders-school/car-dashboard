@@ -20,6 +20,7 @@ if (Qt6_VERSION VERSION_LESS 6.2.0)
 endif()
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/cppcheck.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/clang-format.cmake)
 
 
 qt_add_executable(${CMAKE_PROJECT_NAME} 
