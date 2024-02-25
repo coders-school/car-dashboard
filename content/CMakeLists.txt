@@ -9,13 +9,14 @@ qt6_add_qml_module(content
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
+        AirConditionSitControl.qml
+        App.qml
         Car3D.qml
-        Navigation.qml
         Gauges.qml
         MainScreeen.ui.qml
-        App.qml
-        PhoneList.qml
-        AirConditionSitControl.qml
-        MusicPlayer.qml
         MenuButton.qml
+        MusicPlayer.qml
+        Navigation.qml
+        PhoneList.qml
+
 )
