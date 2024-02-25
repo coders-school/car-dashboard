@@ -17,5 +17,6 @@ add_subdirectory(asset_imports)
 target_link_libraries(CarDashboardApp PRIVATE
     contentplugin
     CarDashboardplugin
+    Quick3DAssets_Supraplugin
 
 )

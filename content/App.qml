@@ -14,11 +14,17 @@ Window {
     MainScreeen {
         id: mainScreen
 
+        MenuButton {
+            id: menuButton
+        }
+
+        Car3D {
+            id:car3D
+        }
+
     }
 
-    MenuButton {
-        id: menuButton
-    }
+
 
 }
 

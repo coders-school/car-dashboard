@@ -16,7 +16,7 @@ qt6_add_qml_module(CarDashboard
     QML_FILES
         Constants.qml
         DirectoryFontLoader.qml
-        EventListSimulator.qml
         EventListModel.qml
+        EventListSimulator.qml
 
 )
