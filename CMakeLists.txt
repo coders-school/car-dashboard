@@ -19,6 +19,7 @@ if (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
 elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
     add_compile_options (-fcolor-diagnostics)
 endif ()
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/files.cmake)
 
 find_package(QT NAMES Qt6 COMPONENTS Core Gui Qml Quick)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Qml Quick)
@@ -30,12 +31,9 @@ if (Qt6_VERSION VERSION_LESS 6.2.0)
 message(FATAL_ERROR "You need Qt 6.2.0 or newer to build the application.")
 endif()
 
-FILE(GLOB SOURCES 
-    "src/*.cpp"
-) 
-
 qt_add_executable(${CMAKE_PROJECT_NAME} 
-    ${SOURCES}
+    ${ALL_SOURCES}
+    ${ALL_HEADERS}
 )
 
 # qt_standard_project_setup() requires Qt 6.3 or higher. See https://doc.qt.io/qt-6/qt-standard-project-setup.html for details.

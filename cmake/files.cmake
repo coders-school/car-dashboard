@@ -1,0 +1,8 @@
+FILE(GLOB_RECURSE ALL_SOURCES 
+    "${CMAKE_SOURCE_DIR}/src/*.cpp"
+)
+
+FILE(GLOB_RECURSE ALL_HEADERS 
+    "${CMAKE_SOURCE_DIR}/src/*.hpp"
+    "${CMAKE_SOURCE_DIR}/src/*.h"
+)
