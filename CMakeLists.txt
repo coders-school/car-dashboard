@@ -21,6 +21,7 @@ endif()
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/cppcheck.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/clang-format.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/clang-tidy.cmake)
 
 
 qt_add_executable(${CMAKE_PROJECT_NAME} 
