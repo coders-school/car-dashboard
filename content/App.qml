@@ -21,10 +21,7 @@ Window {
         Car3D {
             id:car3D
         }
-
     }
-
-
 
 }
 
