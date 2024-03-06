@@ -20,6 +20,14 @@ Window {
 
         Car3D {
             id:car3D
+
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+
+            width: parent.width * 0.47
+            height: parent.height
         }
     }
 

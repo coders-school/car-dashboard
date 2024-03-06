@@ -10,16 +10,7 @@ Item {
     property double rotationDoorLeft: 0
     // property double rotationTrunk: 0
 
-
-    anchors {
-        top: parent.top
-        right: parent.right
-    }
-
-    width: parent.width * 0.47
-    height: parent.height
-
-    View3D {
+      View3D {
 
         id: view3D
         anchors.fill: parent
