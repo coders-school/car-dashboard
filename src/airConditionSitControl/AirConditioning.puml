@@ -1,0 +1,40 @@
+@startuml AirConditioning
+
+abstract class Action
+Action : + void {abstract} operator()
+
+abstract class EthernetInterface
+
+
+
+namespace AirConditioning {
+
+
+class Gui
+Gui : + button...()
+Gui : Properties info...
+Gui : Properties buttons...
+Gui o-> .Action
+Gui o-> InfoABC
+
+class InfoABC
+
+class ActionABC
+ActionABC : + void {abstract} operator()
+ActionABC --|> .Action
+
+class Controller
+Controller : - InfoABC info
+Controller : - ActionABC[] actions
+Controller --> .EthernetInterface
+Controller *--> "1..*" ActionABC
+Controller *--> "1" InfoABC
+
+
+}
+
+package Qml <<Rectangle>> {
+}
+Qml.AirConditioning ---> AirConditioning.Gui : PROPERTIES
+
+@enduml
