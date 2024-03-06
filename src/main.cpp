@@ -3,12 +3,18 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include <memory>
 
+#include "airConditionSitControl/Controller.hpp"
 #include "app_environment.h"
 #include "import_qml_plugins.h"
 
 int main(int argc, char *argv[]) {
     set_qt_environment();
+
+    auto airConditionController = std::make_unique<AirConditionSitControl::Controller>();
+
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
@@ -20,6 +26,8 @@ int main(int argc, char *argv[]) {
                 QCoreApplication::exit(-1);
         },
         Qt::QueuedConnection);
+
+    engine.rootContext()->setContextProperty("airConditionController", airConditionController.get());
 
     engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
     engine.addImportPath(":/");
