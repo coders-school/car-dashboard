@@ -12,6 +12,7 @@ Item {
     property bool switchDoorTrunk: false
 
     View3D {
+
         id: view3D
         anchors.fill: parent
         environment: sceneEnvironment
