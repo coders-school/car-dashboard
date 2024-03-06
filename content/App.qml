@@ -23,9 +23,9 @@ Window {
     AirConditionSitControl {
         id: airConditionSitControl
         x: mainScreen.width / 2 + 100
-        y: 0
         width: mainScreen.width - x
         height: mainScreen.height
+        y: 0
     }
 
 }
