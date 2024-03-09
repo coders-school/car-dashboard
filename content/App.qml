@@ -14,19 +14,82 @@ Window {
     MainScreeen {
         id: mainScreen
 
-    }
+        MenuButton {
+            id: menuButton
+        }
 
-    MenuButton {
-        id: menuButton
-    }
+        Gauges {
+            id: gauges
 
-    AirCondition {
-        id: airCondition
-        x: mainScreen.width / 2 + 100
-        width: mainScreen.width - x
-        height: mainScreen.height
-        y: 0
-    }
+            width: parent.width * 0.47
+            height: parent.height
+        }
 
+        Car3D {
+            id: car3D
+            visible: false
+
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+
+            width: parent.width * 0.47
+            height: parent.height
+        }
+
+        AirCondition {
+            id: ac
+            visible: false
+
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+
+            width: parent.width * 0.47
+            height: parent.height
+        }
+
+        PhoneList {
+            id: phonList
+            visible: false
+
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+
+            width: parent.width * 0.47
+            height: parent.height
+        }
+
+        MusicPlayer {
+            id: musicPlayer
+            visible: false
+
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+
+            width: parent.width * 0.47
+            height: parent.height
+        }
+
+        Navigation {
+            id: navigation
+            visible: false
+
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+
+            width: parent.width * 0.47
+            height: parent.height
+
+        }
+    }
 }
 
