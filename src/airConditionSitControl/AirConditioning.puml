@@ -35,6 +35,6 @@ Controller *--> "1" InfoABC
 
 package Qml <<Rectangle>> {
 }
-Qml.AirConditioning ---> AirConditioning.Gui : PROPERTIES
+Qml.AirConditioning ---> AirConditioning.Gui : PROPERTIES, SLOTS
 
 @enduml
