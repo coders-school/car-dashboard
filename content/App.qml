@@ -12,8 +12,7 @@ Window {
     title: "CarDashboard"
 
     MenuButton {
-        id: menuButton
-        height: parent.height
+        id: menuButton        
     }
 
     Gauges {

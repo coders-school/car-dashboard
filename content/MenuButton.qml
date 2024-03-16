@@ -46,6 +46,5 @@ Column {
         anchors.topMargin: 400
         text: "Navigation"
     }
-
- }
+}
 
