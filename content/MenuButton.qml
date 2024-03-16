@@ -1,7 +1,11 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
-MainScreeen {
+Column {
+    id:column
+    width:100
+    height: parent.height
+    anchors.centerIn: parent
 
     Button {
         id: car3dButton
@@ -42,4 +46,6 @@ MainScreeen {
         anchors.topMargin: 400
         text: "Navigation"
     }
-}
+
+ }
+
