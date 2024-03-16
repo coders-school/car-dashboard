@@ -5,91 +5,99 @@ import QtQuick 6.4
 import CarDashboard
 
 Window {
-    width: mainScreen.width
-    height: mainScreen.height
+    width: Constants.width
+    height: Constants.height
 
     visible: true
     title: "CarDashboard"
 
-    MainScreeen {
-        id: mainScreen
+    MenuButton {
+        id: menuButton
+        height: parent.height
+    }
 
-        MenuButton {
-            id: menuButton
+    Gauges {
+        id: gauges
+
+        anchors {
+            top: parent.top
+            left: parent.left
+            right:menuButton.left
         }
 
-        Gauges {
-            id: gauges
+        width: parent.width
+        height: parent.height
+    }
 
-            width: parent.width * 0.47
-            height: parent.height
+    Car3D {
+        id: car3D
+        visible: true
+
+        anchors {
+            top: parent.top
+            right: parent.right
+            left:menuButton.right
         }
 
-        Car3D {
-            id: car3D
-            visible: false
+        width: parent.width
+        height: parent.height
+    }
 
-            anchors {
-                top: parent.top
-                right: parent.right
-            }
-
-            width: parent.width * 0.47
-            height: parent.height
-        }
 
         AirCondition {
             id: ac
             visible: false
 
-            anchors {
-                top: parent.top
-                right: parent.right
-            }
-
-            width: parent.width * 0.47
-            height: parent.height
+        anchors {
+            top: parent.top
+            right: parent.right
+            left:menuButton.right
         }
 
-        PhoneList {
-            id: phonList
-            visible: false
+        width: parent.width
+        height: parent.height
+    }
 
-            anchors {
-                top: parent.top
-                right: parent.right
-            }
+    PhoneList {
+        id: phonList
+        visible: false
 
-            width: parent.width * 0.47
-            height: parent.height
+        anchors {
+            top: parent.top
+            right: parent.right
+            left:menuButton.right
         }
 
-        MusicPlayer {
-            id: musicPlayer
-            visible: false
+        width: parent.width
+        height: parent.height
+    }
 
-            anchors {
-                top: parent.top
-                right: parent.right
-            }
+    MusicPlayer {
+        id: musicPlayer
+        visible: false
 
-            width: parent.width * 0.47
-            height: parent.height
+        anchors {
+            top: parent.top
+            right: parent.right
+            left:menuButton.right
         }
 
-        Navigation {
-            id: navigation
-            visible: false
+        width: parent.width
+        height: parent.height
+    }
 
-            anchors {
-                top: parent.top
-                right: parent.right
-            }
+    Navigation {
+        id: navigation
+        visible: false
 
-            width: parent.width * 0.47
-            height: parent.height
-
+        anchors {
+            top: parent.top
+            right: parent.right
+            left:menuButton.right
         }
+
+        width: parent.width
+        height: parent.height
     }
 }
 
