@@ -21,7 +21,7 @@ Window {
         anchors {
             top: parent.top
             left: parent.left
-            right:menuButton.left
+            right: menuButton.left
         }
 
         width: parent.width
@@ -35,7 +35,7 @@ Window {
         anchors {
             top: parent.top
             right: parent.right
-            left:menuButton.right
+            left: menuButton.right
         }
 
         width: parent.width
@@ -50,7 +50,7 @@ Window {
         anchors {
             top: parent.top
             right: parent.right
-            left:menuButton.right
+            left: menuButton.right
         }
 
         width: parent.width
@@ -64,7 +64,7 @@ Window {
         anchors {
             top: parent.top
             right: parent.right
-            left:menuButton.right
+            left: menuButton.right
         }
 
         width: parent.width
@@ -78,7 +78,7 @@ Window {
         anchors {
             top: parent.top
             right: parent.right
-            left:menuButton.right
+            left: menuButton.right
         }
 
         width: parent.width
@@ -92,7 +92,7 @@ Window {
         anchors {
             top: parent.top
             right: parent.right
-            left:menuButton.right
+            left: menuButton.right
         }
 
         width: parent.width
