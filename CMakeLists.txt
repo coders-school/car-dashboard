@@ -20,8 +20,8 @@ if (Qt6_VERSION VERSION_LESS 6.2.0)
 endif()
 
 qt_add_executable(${CMAKE_PROJECT_NAME} 
-    ${ALL_SOURCES}
-    ${ALL_HEADERS}
+    ${MAIN_SOURCES}
+    ${MAIN_HEADERS}
 )
 
 if (${QT_VERSION_MINOR} GREATER_EQUAL 3)
