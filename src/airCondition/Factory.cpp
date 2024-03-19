@@ -1,23 +1,17 @@
 #include "Factory.hpp"
 
-#include <QQmlApplicationEngine>
-#include <QQmlContext>
-
 #include "Controller.hpp"
 
 class QQmlApplicationEngine;
 
 namespace AirCondition {
 
-Factory::Factory(QQmlApplicationEngine &engine) {
-    this->createObjects();
-    if (controller) {
-        engine.rootContext()->setContextProperty("airConditionController", controller.get());
-    }
-}
+Factory::Factory() { this->createObjects(); }
 
 Factory::~Factory() = default;
 
-void Factory::createObjects() { this->controller = std::make_unique<Controller>(); }
+std::shared_ptr<Controller> Factory::getController() { return this->controller; }
+
+void Factory::createObjects() { this->controller = std::make_shared<Controller>(); }
 
 }  // namespace AirCondition

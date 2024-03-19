@@ -8,13 +8,15 @@ class Controller;
 
 class Factory {
 public:
-    explicit Factory(QQmlApplicationEngine &engine);
+    explicit Factory();
     ~Factory();
+
+    std::shared_ptr<Controller> getController();
 
 private:
     void createObjects();
 
-    std::unique_ptr<Controller> controller;
+    std::shared_ptr<Controller> controller;
 };
 
 }  // namespace AirCondition
