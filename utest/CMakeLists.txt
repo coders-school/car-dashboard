@@ -29,11 +29,11 @@ if (Qt6_VERSION VERSION_LESS 6.2.0)
 message(FATAL_ERROR "You need Qt 6.2.0 or newer to build the application.")
 endif()
 
-FILE(GLOB SOURCES_TEST
+FILE(GLOB_RECURSE SOURCES_TEST
     "*.cpp"
 )
 LIST(APPEND SOURCES_TEST 
-    ${ALL_SOURCES}
+    ${MAIN_SOURCES}
 )
 LIST(FILTER SOURCES_TEST EXCLUDE
     REGEX ${FILE_MAIN_CPP}
@@ -48,6 +48,10 @@ qt6_standard_project_setup()
 endif()
 
 
+target_include_directories(${PROJECT_NAME}
+PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/../src
+)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Core

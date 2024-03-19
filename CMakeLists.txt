@@ -25,8 +25,8 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/clang-tidy.cmake)
 
 
 qt_add_executable(${CMAKE_PROJECT_NAME} 
-    ${ALL_SOURCES}
-    ${ALL_HEADERS}
+    ${MAIN_SOURCES}
+    ${MAIN_HEADERS}
 )
 
 if (${QT_VERSION_MINOR} GREATER_EQUAL 3)
