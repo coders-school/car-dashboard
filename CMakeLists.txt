@@ -19,6 +19,9 @@ if (Qt6_VERSION VERSION_LESS 6.2.0)
     message(FATAL_ERROR "You need Qt 6.2.0 or newer to build the application.")
 endif()
 
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/clang-format.cmake)
+
+
 qt_add_executable(${CMAKE_PROJECT_NAME} 
     ${MAIN_SOURCES}
     ${MAIN_HEADERS}
