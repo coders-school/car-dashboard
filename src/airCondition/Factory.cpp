@@ -7,7 +7,7 @@
 
 class QQmlApplicationEngine;
 
-namespace AirConditionSitControl {
+namespace AirCondition {
 
 Factory::Factory(QQmlApplicationEngine &engine) {
     this->createObjects();
@@ -20,4 +20,4 @@ Factory::~Factory() = default;
 
 void Factory::createObjects() { this->controller = std::make_unique<Controller>(); }
 
-}  // namespace AirConditionSitControl
+}  // namespace AirCondition

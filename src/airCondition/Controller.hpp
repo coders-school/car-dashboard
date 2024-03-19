@@ -2,7 +2,7 @@
 
 #include <QObject>
 
-namespace AirConditionSitControl {
+namespace AirCondition {
 
 class Controller : public QObject {
     Q_OBJECT
@@ -26,4 +26,4 @@ private:
     int counter = 0;
 };
 
-}  // namespace AirConditionSitControl
+}  // namespace AirCondition

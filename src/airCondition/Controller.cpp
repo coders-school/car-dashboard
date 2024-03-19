@@ -2,7 +2,7 @@
 
 #include <QDebug>
 
-namespace AirConditionSitControl {
+namespace AirCondition {
 
 Controller::Controller(QObject *parent) : QObject{parent} {}
 
@@ -23,4 +23,4 @@ void Controller::incrementCounter() {
     emit counterChanged();
 }
 
-}  // namespace AirConditionSitControl
+}  // namespace AirCondition

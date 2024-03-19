@@ -3,7 +3,7 @@
 
 class QQmlApplicationEngine;
 
-namespace AirConditionSitControl {
+namespace AirCondition {
 class Controller;
 
 class Factory {
@@ -17,4 +17,4 @@ private:
     std::unique_ptr<Controller> controller;
 };
 
-}  // namespace AirConditionSitControl
+}  // namespace AirCondition
