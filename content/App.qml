@@ -20,5 +20,13 @@ Window {
         id: menuButton
     }
 
+    PhoneList {
+        id: phoneList
+        x: mainScreen.width / 2 + 100
+        y: 0
+        width: mainScreen.width - x
+        height: mainScreen.height
+    }
+
 }
 
