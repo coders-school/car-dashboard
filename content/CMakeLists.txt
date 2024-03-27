@@ -13,9 +13,10 @@ qt6_add_qml_module(content
         Navigation.qml
         Gauges.qml
         MainScreeen.ui.qml
+        AirCondition.qml
         App.qml
-        PhoneList.qml
-        AirConditionSitControl.qml
-        MusicPlayer.qml
         MenuButton.qml
+        PhoneList.qml
+        MusicPlayer.qml
+
 )

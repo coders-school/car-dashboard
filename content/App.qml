@@ -20,8 +20,8 @@ Window {
         id: menuButton
     }
 
-    AirConditionSitControl {
-        id: airConditionSitControl
+    AirCondition {
+        id: airCondition
         x: mainScreen.width / 2 + 100
         width: mainScreen.width - x
         height: mainScreen.height
