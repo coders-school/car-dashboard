@@ -3,31 +3,26 @@ import QtQuick.Controls 2.15
 
 
 Item {
+    id: main
+    width: 860
+    height: 540
 
-    Button {
-        id: acEnableButton
-        x: 46
-        y: 84
-        width: 83
-        height: 52
-        highlighted: false
-        checkable: true
-        text: "A/C"
-    }
-
+    property int buttonWidth: 100;
+    property int buttonHeight: 50;
 
     Text {
         id: tempControlHeader
-        y: 265
+        y: tempControlDial.y - 40
         anchors.horizontalCenter: tempControlDial.horizontalCenter
         text: qsTr("Temperature")
         font.pixelSize: 20
+        anchors.horizontalCenterOffset: 0
     }
 
     Dial {
         id: tempControlDial
-        x: 65
-        y: 300
+        x: main.width / 2 - width / 2 - 250
+        y: main.height / 2 - height / 2
         value: 25
         to: 32
         from: 18
@@ -40,23 +35,24 @@ Item {
         id: tempControlValueText
         anchors.horizontalCenter: tempControlDial.horizontalCenter
         anchors.verticalCenter: tempControlDial.verticalCenter
-        text: (tempControlDial.value).toFixed(1) + " C"
+        text: (tempControlDial.value).toFixed(1) + "ºC"
         font.pixelSize: 32
     }
 
     
     Text {
         id: fanControlHeader
-        y: 265
+        y: fanControlDial.y - 40
         anchors.horizontalCenter: fanControlDial.horizontalCenter
         text: qsTr("Fan")
         font.pixelSize: 20
+        anchors.horizontalCenterOffset: 0
     }
 
     Dial {
         id: fanControlDial
-        x: 279
-        y: 300
+        x: main.width / 2 - width / 2 + 250
+        y: main.height / 2 - height / 2
         value: 0
         to: 100
         wheelEnabled: false
@@ -72,61 +68,77 @@ Item {
         font.pixelSize: 32
     }
 
+    Row {
+        x: main.width / 2 - width / 2
+        y: main.height / 2 - height / 2
+        spacing: 20
 
-    Button {
-        id: heatingFrontButton
-        x: 46
-        y: 154
-        checkable: true
-        text: qsTr("Front")
+        Column {
+            spacing: 20
+
+            Button {
+                id: acEnableButton
+                width: buttonWidth
+                height: buttonHeight
+                highlighted: false
+                checkable: true
+                text: "A/C"
+            }
+
+            Button {
+                id: heatingRearButton
+                width: buttonWidth
+                height: buttonHeight
+                checkable: true
+                text: qsTr("Rear")
+            }
+
+            Button {
+                id: circulationButton
+                width: buttonWidth
+                height: buttonHeight
+                checkable: true
+                text: qsTr("Circulation")
+            }
+
+        }
+
+
+        Column {
+            spacing: 20
+
+            Button {
+                id: heatingFrontButton
+                width: buttonWidth
+                height: buttonHeight
+                checkable: true
+                text: qsTr("Front")
+            }
+
+            Button {
+                id: faceAirflowButton
+                width: buttonWidth
+                height: buttonHeight
+                text: qsTr("Face")
+                checkable: true
+            }
+
+            Button {
+                id: feetAirflowButton
+                width: buttonWidth
+                height: buttonHeight
+                text: qsTr("Feet")
+                checkable: true
+            }
+
+        }
     }
-    
-    Button {
-        id: feetAirflowButton
-        x: 295
-        y: 154
-        width: 110
-        height: 52
-        text: qsTr("Feet")
-        checkable: true
-    }
-
-    Button {
-        id: faceAirflowButton
-        x: 162
-        y: 154
-        width: 110
-        height: 52
-        text: qsTr("Face")
-        checkable: true
-    }
-
-
-    Button {
-        id: heatingRearButton
-        x: 303
-        y: 84
-        width: 93
-        checkable: true
-        text: qsTr("Rear")
-    }
-
-    Button {
-        id: circulationButton
-        x: 155
-        y: 84
-        width: 110
-        height: 52
-        checkable: true
-        text: qsTr("Circulation")
-    }
-
 
     Text {
         id: currentTemperatureText
-        x: 536
-        y: 92
-        text: qsTr("20 C")
+        x: 688
+        y: 50
+        text: qsTr("20ºC")
         font.pixelSize: 32
     }
 
