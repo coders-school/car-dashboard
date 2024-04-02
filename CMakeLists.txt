@@ -7,25 +7,19 @@ project(CarDashboardApp LANGUAGES CXX)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/flags.cmake)
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/files.cmake)
+find_package(QT NAMES Qt6 COMPONENTS Gui Qml Quick)
+find_package(Qt6 REQUIRED COMPONENTS Core Qml Quick)
 
-find_package(QT NAMES Qt6 COMPONENTS Core Gui Qml Quick)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Qml Quick)
-
-qt_policy(SET QTP0001 NEW)
-
+# To build this application you need Qt 6.2.0 or higher
 if (Qt6_VERSION VERSION_LESS 6.2.0)
-    message(FATAL_ERROR "You need Qt 6.2.0 or newer to build the application.")
+message(FATAL_ERROR "You need Qt 6.2.0 or newer to build the application.")
 endif()
 
-qt_add_executable(${CMAKE_PROJECT_NAME} 
-    ${MAIN_SOURCES}
-    ${MAIN_HEADERS}
-)
+qt_add_executable(${CMAKE_PROJECT_NAME} src/main.cpp)
 
+# qt_standard_project_setup() requires Qt 6.3 or higher. See https://doc.qt.io/qt-6/qt-standard-project-setup.html for details.
 if (${QT_VERSION_MINOR} GREATER_EQUAL 3)
-    qt6_standard_project_setup()
+qt6_standard_project_setup()
 endif()
 
 qt_add_resources(${CMAKE_PROJECT_NAME} "configuration"
@@ -49,14 +43,4 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/qmlmodules)
 
 install(TARGETS ${CMAKE_PROJECT_NAME}
     BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-)
-
-
-enable_testing()
-add_subdirectory(
-    ${CMAKE_CURRENT_SOURCE_DIR}/utest
-)
-add_subdirectory(
-    ${CMAKE_CURRENT_SOURCE_DIR}/utestQml
-)
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

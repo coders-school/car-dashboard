@@ -10,14 +10,22 @@ import QtQuick 6.4
 import QtQuick.Controls 6.4
 import QtQuick3D 6.4
 import CarDashboard
+import QtQuick.Layouts
+import Quick3DAssets.Stylized_road
+import Quick3DAssets.Road_Mid
+
+
 
 Rectangle {
     // ui.qml it use only to make backround of yout project not LOGIC (will see, if gona by problematic we will use normal qml file)
+   //Divide by two to change size of window to look like in the car
     width: Constants.width
-    height: Constants.height / 2 //Divide by two to change size of window to look like in the car
-
+    height: Constants.height
     color: Constants.backgroundColor
 
+    Item {
+        id: __materialLibrary__
+    }
     //    View3D {
     //        id: view3D
     //        anchors.fill: parent
@@ -68,3 +76,5 @@ Rectangle {
     //        font.family: Constants.font.family
     //    }
 }
+
+

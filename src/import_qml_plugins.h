@@ -7,4 +7,11 @@
 
 Q_IMPORT_QML_PLUGIN(contentPlugin)
 Q_IMPORT_QML_PLUGIN(CarDashboardPlugin)
+Q_IMPORT_QML_PLUGIN(Quick3DAssets_Drogra2Plugin)
+Q_IMPORT_QML_PLUGIN(Quick3DAssets_Drogra3Plugin)
+Q_IMPORT_QML_PLUGIN(Quick3DAssets_Drogra3DPlugin)
+Q_IMPORT_QML_PLUGIN(Quick3DAssets_Road_MidPlugin)
+Q_IMPORT_QML_PLUGIN(Quick3DAssets_Stylized_roadPlugin)
+Q_IMPORT_QML_PLUGIN(Quick3DAssets_SupraPlugin)
+Q_IMPORT_QML_PLUGIN(Quick3DAssets_TestroadPlugin)
 
