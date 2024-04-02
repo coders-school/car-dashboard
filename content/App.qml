@@ -3,6 +3,7 @@
 
 import QtQuick 6.4
 import CarDashboard
+import QtQuick.Layouts
 
 Window {
     width: Constants.width
@@ -12,7 +13,8 @@ Window {
     title: "CarDashboard"
 
     MenuButton {
-        id: menuButton        
+        id: menuButton
+        height: parent.height
     }
 
     Gauges {
@@ -21,82 +23,46 @@ Window {
         anchors {
             top: parent.top
             left: parent.left
-            right: menuButton.left
+            right:menuButton.left
         }
 
-        width: parent.width
         height: parent.height
     }
 
-    Car3D {
-        id: car3D
-        visible: true
-
+    StackLayout {
+        id: layout
         anchors {
             top: parent.top
             right: parent.right
-            left: menuButton.right
+            left:menuButton.right
         }
 
-        width: parent.width
         height: parent.height
-    }
+        currentIndex: menuButton.actualWindow
 
+        Car3D {
+            id: car3D
+            anchors.fill: parent
+        }
 
         AirCondition {
             id: ac
-            visible: false
-
-        anchors {
-            top: parent.top
-            right: parent.right
-            left: menuButton.right
+            anchors.fill: parent
         }
 
-        width: parent.width
-        height: parent.height
-    }
-
-    PhoneList {
-        id: phonList
-        visible: false
-
-        anchors {
-            top: parent.top
-            right: parent.right
-            left: menuButton.right
+        PhoneList {
+            id: phonList
+            anchors.fill: parent
         }
 
-        width: parent.width
-        height: parent.height
-    }
-
-    MusicPlayer {
-        id: musicPlayer
-        visible: false
-
-        anchors {
-            top: parent.top
-            right: parent.right
-            left: menuButton.right
+        MusicPlayer {
+            id: musicPlayer
+            anchors.fill: parent
         }
 
-        width: parent.width
-        height: parent.height
-    }
-
-    Navigation {
-        id: navigation
-        visible: false
-
-        anchors {
-            top: parent.top
-            right: parent.right
-            left: menuButton.right
+        Navigation {
+            id: navigation
+            anchors.fill: parent
         }
-
-        width: parent.width
-        height: parent.height
     }
 }
-

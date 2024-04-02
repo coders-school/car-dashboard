@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-
 Column {
+    property int actualWindow: 0
     id:column
     width:100
     height: parent.height
@@ -13,6 +13,9 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 100
         text: "3DCar"
+        onClicked: {
+           actualWindow = 0
+        }
     }
 
     Button {
@@ -21,6 +24,9 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 175
         text: "A/C"
+        onClicked: {
+           actualWindow = 1
+        }
     }
 
     Button {
@@ -29,6 +35,9 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 250
         text: "PhoneCalling"
+        onClicked: {
+           actualWindow = 2
+        }
     }
 
     Button {
@@ -37,6 +46,9 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 325
         text: "MusicPlayer"
+        onClicked: {
+           actualWindow = 3
+        }
     }
 
     Button {
@@ -45,6 +57,9 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 400
         text: "Navigation"
+        onClicked: {
+           actualWindow = 4
+        }
     }
 }
 
