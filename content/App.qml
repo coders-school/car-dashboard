@@ -20,5 +20,13 @@ Window {
         id: menuButton
     }
 
+    AirCondition {
+        id: airCondition
+        x: mainScreen.width / 2 + 100
+        width: mainScreen.width - x
+        height: mainScreen.height
+        y: 0
+    }
+
 }
 
