@@ -18,6 +18,10 @@ Rectangle {
 
     color: Constants.backgroundColor
 
+    Item {
+        id: __materialLibrary__
+    }
+
     //    View3D {
     //        id: view3D
     //        anchors.fill: parent
