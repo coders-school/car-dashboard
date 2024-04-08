@@ -81,28 +81,30 @@ Item {
                 width: buttonWidth
                 height: buttonHeight
                 highlighted: false
-                checkable: true
                 text: "A/C"
+                checked: airConditionController.enableAC
+                onClicked: airConditionController.enableAC = !airConditionController.enableAC;
             }
 
             Button {
                 id: heatingRearButton
                 width: buttonWidth
                 height: buttonHeight
-                checkable: true
                 text: qsTr("Rear")
+                checked: airConditionController.heatingRear
+                onClicked: airConditionController.heatingRear = !airConditionController.heatingRear;
             }
 
             Button {
                 id: circulationButton
                 width: buttonWidth
                 height: buttonHeight
-                checkable: true
                 text: qsTr("Circulation")
+                checked: airConditionController.circulation
+                onClicked: airConditionController.circulation = !airConditionController.circulation;
             }
 
         }
-
 
         Column {
             spacing: 20
@@ -111,8 +113,9 @@ Item {
                 id: heatingFrontButton
                 width: buttonWidth
                 height: buttonHeight
-                checkable: true
                 text: qsTr("Front")
+                checked: airConditionController.heatingFront
+                onClicked: airConditionController.heatingFront = !airConditionController.heatingFront;
             }
 
             Button {
@@ -120,7 +123,8 @@ Item {
                 width: buttonWidth
                 height: buttonHeight
                 text: qsTr("Face")
-                checkable: true
+                checked: airConditionController.faceAirflow
+                onClicked: airConditionController.faceAirflow = !airConditionController.faceAirflow;
             }
 
             Button {
@@ -128,7 +132,8 @@ Item {
                 width: buttonWidth
                 height: buttonHeight
                 text: qsTr("Feet")
-                checkable: true
+                checked: airConditionController.feetAirflow
+                onClicked: airConditionController.feetAirflow = !airConditionController.feetAirflow;
             }
 
         }
