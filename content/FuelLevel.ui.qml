@@ -166,7 +166,7 @@ Item {
     states: [
         State {
             name: "Level0"
-            when: my_fuelLevel.currentFuelLevel === 0
+            when: my_fuelLevel.fuelLevel === 0
 
             PropertyChanges {
                 target: levelActive_1
@@ -205,7 +205,7 @@ Item {
 
         State {
             name: "Level1"
-            when: my_fuelLevel.currentFuelLevel === 1
+            when: my_fuelLevel.fuelLevel === 1
 
 
             PropertyChanges {
@@ -244,7 +244,7 @@ Item {
 
         State {
             name: "Level2"
-            when: my_fuelLevel.currentFuelLevel === 2
+            when: my_fuelLevel.fuelLevel === 2
 
 
             PropertyChanges {
@@ -320,7 +320,7 @@ Item {
         },
         State {
             name: "Level4"
-            when: my_fuelLevel.currentFuelLevel === 4
+            when: my_fuelLevel.fuelLevel === 4
 
 
             PropertyChanges {
@@ -358,7 +358,7 @@ Item {
         },
         State {
             name: "Level5"
-            when: my_fuelLevel.currentFuelLevel === 5
+            when: my_fuelLevel.fuelLevel === 5
 
 
             PropertyChanges {
@@ -396,7 +396,7 @@ Item {
         },
         State {
             name: "Level6"
-            when: my_fuelLevel.currentFuelLevel === 6
+            when: my_fuelLevel.fuelLevel === 6
 
 
             PropertyChanges {

@@ -2,4 +2,3 @@
 ### Do not change
 
 add_subdirectory(CarDashboard)
-add_subdirectory(Data)
