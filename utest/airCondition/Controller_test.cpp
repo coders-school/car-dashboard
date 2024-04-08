@@ -111,3 +111,35 @@ TEST_F(AirConditionController_Test, feetAirflow) {
     EXPECT_CALL(signalTester, slot_bool(false)).Times(1);
     EXPECT_TRUE(controller.setProperty("feetAirflow", false));
 }
+
+TEST_F(AirConditionController_Test, aSetTemp) {
+    QObject::connect(&controller, &AirCondition::Controller::aSetTempChanged, &signalTester, &SignalTester::slot_float);
+
+    EXPECT_CALL(signalTester, slot_float(1.75f)).Times(1);
+    controller.setASetTemp(1.75f);
+    EXPECT_EQ(controller.getASetTemp(), 1.75f);
+
+    QVariant property = controller.property("aSetTemp");
+    ASSERT_TRUE(property.canConvert<float>());
+    EXPECT_EQ(property.toFloat(), 1.75);
+
+    EXPECT_CALL(signalTester, slot_float(3.25f)).Times(1);
+    EXPECT_TRUE(controller.setProperty("aSetTemp", 3.25f));
+    EXPECT_EQ(controller.getASetTemp(), 3.25f);
+}
+
+TEST_F(AirConditionController_Test, aSetFan) {
+    QObject::connect(&controller, &AirCondition::Controller::aSetFanChanged, &signalTester, &SignalTester::slot_float);
+
+    EXPECT_CALL(signalTester, slot_float(5)).Times(1);
+    controller.setASetFan(5);
+    EXPECT_EQ(controller.getASetFan(), 5);
+
+    QVariant property = controller.property("aSetFan");
+    ASSERT_TRUE(property.canConvert<int>());
+    EXPECT_EQ(property.toFloat(), 5);
+
+    EXPECT_CALL(signalTester, slot_float(112)).Times(1);
+    EXPECT_TRUE(controller.setProperty("aSetFan", 112));
+    EXPECT_EQ(controller.getASetFan(), 112);
+}

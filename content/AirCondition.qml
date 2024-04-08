@@ -23,12 +23,16 @@ Item {
         id: tempControlDial
         x: main.width / 2 - width / 2 - 250
         y: main.height / 2 - height / 2
-        value: 25
+        value: airConditionController.aSetTemp
         to: 32
         from: 18
         wheelEnabled: false
         snapMode: Dial.SnapAlways
         stepSize: 0.5
+
+        onMoved: {
+            airConditionController.aSetTemp = this.value;
+        }
     }
 
     Text {
@@ -53,11 +57,15 @@ Item {
         id: fanControlDial
         x: main.width / 2 - width / 2 + 250
         y: main.height / 2 - height / 2
-        value: 0
+        value: airConditionController.aSetFan
         to: 100
         wheelEnabled: false
         stepSize: 20
         snapMode: Dial.SnapAlways
+        
+        onMoved: {
+            airConditionController.aSetFan = this.value;
+        }
     }
 
     Text {
