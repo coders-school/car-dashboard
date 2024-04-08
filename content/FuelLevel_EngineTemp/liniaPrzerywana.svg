@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="175.89453mm"
+   height="33.598431mm"
+   viewBox="0 0 175.89453 33.598431"
+   version="1.1"
+   id="svg9624"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="liniaPrzerywana.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview9626"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="325"
+     inkscape:cy="-60"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:lockguides="true" />
+  <defs
+     id="defs9621">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect12747"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Jeśli po konwersji przycięcia na ścieżki nie zostanie spłaszczony wynik, użyj reguły wypełniania w oknie dialogowym &lt;b&gt;wypełnienie i obrys&lt;/b&gt; ." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath12743">
+      <path
+         style="display:block;fill:#ffffff;fill-rule:evenodd;stroke:#454545;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:56.7201;stroke-opacity:1;paint-order:stroke fill markers"
+         d="M 69.594551,73.458817 C 62.406433,80.973669 24.17871,151.22119 24.17871,151.22119 v 0"
+         id="path12745"
+         clip-path="none" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath12743-7">
+      <path
+         style="display:none;fill:#ffffff;fill-rule:evenodd;stroke:#454545;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:56.7201;stroke-opacity:1;paint-order:stroke fill markers"
+         d="M 69.594551,73.458817 C 62.406433,80.973669 24.17871,151.22119 24.17871,151.22119 v 0"
+         id="path12745-8"
+         clip-path="none" />
+      <path
+         id="lpe_path-effect12747-8"
+         style="fill:#ffffff;fill-rule:evenodd;stroke:#454545;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:56.7201;stroke-opacity:1;paint-order:stroke fill markers"
+         class="powerclip"
+         d="M 12.317324,88.38951 H 197.68268 v 48.66653 H 12.317324 Z m 11.861386,62.83168 v 0 c 0,0 38.227723,-70.247521 45.415841,-77.762373" />
+    </clipPath>
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect12747-9"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Jeśli po konwersji przycięcia na ścieżki nie zostanie spłaszczony wynik, użyj reguły wypełniania w oknie dialogowym &lt;b&gt;wypełnienie i obrys&lt;/b&gt; ." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipath_lpe_path-effect12747-9">
+      <path
+         style="display:block;fill:#ffffff;fill-rule:evenodd;stroke:#454545;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:56.7201;stroke-opacity:1;paint-order:stroke fill markers"
+         d="M 69.594551,73.458817 C 62.406433,80.973669 24.17871,151.22119 24.17871,151.22119 v 0"
+         id="path13514"
+         clip-path="none" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-16.892362,-99.196225)">
+    <path
+       style="display:inline;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#434343;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24, 7.6;stroke-dashoffset:59.52;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 16.892362,101.15576 c 50.88326,37.21275 119.047148,40.30945 176.159108,-0.3717"
+       id="path9558"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

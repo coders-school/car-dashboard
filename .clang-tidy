@@ -1,0 +1,8 @@
+---
+Checks: '-*,
+        modernize-*,
+        -modernize-use-trailing-return-type
+        '
+WarningsAsErrors: '*'
+HeaderFilterRegex: '^src\/.*\.(hpp|h)$'
+FormatStyle: file

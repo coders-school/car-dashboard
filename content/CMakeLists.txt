@@ -7,15 +7,35 @@ qt_add_library(content STATIC)
 qt6_add_qml_module(content
     URI "content"
     VERSION 1.0
-    RESOURCE_PREFIX "/qt/qml"
     QML_FILES
-        Car3D.qml
-        Navigation.qml
-        Gauges.qml
-        MainScreeen.ui.qml
+        AirCondition.qml
         App.qml
-        PhoneList.qml
-        AirConditionSitControl.qml
-        MusicPlayer.qml
+        Car3D.qml
+        FuelLevel.ui.qml
+        Gauges.qml
+        MainBackground.ui.qml
+        MainScreeen.ui.qml
         MenuButton.qml
+        MusicPlayer.qml
+        Navigation.qml
+        PhoneList.qml
+        SpeedGauge.ui.qml
+    RESOURCES
+        FuelLevel_EngineTemp/linia1.svg
+        FuelLevel_EngineTemp/linia1_orange.svg
+        FuelLevel_EngineTemp/linia2.svg
+        FuelLevel_EngineTemp/linia3.svg
+        FuelLevel_EngineTemp/linia4.svg
+        FuelLevel_EngineTemp/linia5.svg
+        FuelLevel_EngineTemp/linia6.svg
+        FuelLevel_EngineTemp/linia6_red.svg
+        FuelLevel_EngineTemp/liniaPrzerywana.svg
+        FuelLevel_EngineTemp/Main.svg
+        FuelLevel_EngineTemp/otok.svg
+        FuelLevel_EngineTemp/PetrolNormalState.svg
+        FuelLevel_EngineTemp/PetrolReserve.svg
+        MainBackground/MainBackground.svg
+        SpeedGaugePicture/MainBackground.svg
+        SpeedGaugePicture/SmallBackgroundSpedometer.svg
+
 )

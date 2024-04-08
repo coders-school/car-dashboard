@@ -1,184 +1,126 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Timeline 1.0
+import QtQuick.Studio.Components 1.0
+import QtQuick.Studio.Effects 1.0
+
 
 Item {
-    width: 1920
-    height: 1080
+    id:cluster
+    width: 910
+    height: 550
+    FlipableItem{
+        id: flipable
+        x:4
+        y:2
+        width: 910
+        height: 550
+        opacity: 1
 
-    // GaugesTestForm {
+        Item{
+            id: myItem4
 
-    //     // property double speed: 0
-
-    //     Rectangle{
-    //         id:speedGauge
-    //         x: 508
-    //         y: 234
-    //         width: 40
-    //         height: 45
-    //         color:"transparent"
-    //         radius: width
-    //         rotation: speed / 4
-
-    //         Image {
-    //             id: wskazowka_02_PNG
-    //             x: -499
-    //             y: -246
-    //             source: "images/Wskazowka_02_PNG.png"
-    //             fillMode: Image.PreserveAspectFit
-    //         }
-    //     }
-    //     Text {
-    //         id: text1
-    //         x: 482
-    //         y: 307
-    //         width: 91
-    //         height: 61
-    //         color: "#ffffff"
-    //         text:  stringMapper.text
-    //         font.pixelSize: 45
-    //         horizontalAlignment: Text.AlignHCenter
-    //         font.family: "Agency FB"
-
-    //         StringMapper {
-    //             id: stringMapper
-    //             input: rangeMapper.output
-    //             decimals: 0
-    //         }
-
-    //         RangeMapper {
-    //             id: rangeMapper
-    //             outputMaximum: 345
-    //             inputMaximum: 1700
-    //             input: speed
-    //         }
-    //     }
+            MainBackground{
+                id: myMainBackground
+                x:0
+                y:0
+                width: 910
+                height: 550
 
 
-    //     // Text {
-    //     //     id: text2
-    //     //     x: 600
-    //     //     y: 559
-    //     //     width: 91
-    //     //     height: 61
-    //     //     color: "#ffffff"
-    //     //     text: { if(stringMapper.text == "0") {
-    //     //             "N"} else { stringMapper.text }
-    //     //         }
+            }
 
-    //     //     font.pixelSize: 50
-    //     //     horizontalAlignment: Text.AlignHCenter
-    //     //     font.family: "Agency FB"
+            SpeedGauge {
+                id: speedGauge
+                x: 435
+                y: 25
+                width: 500
+                height: 500
+                scale: 0.9
+                //int_kmh
+                //kphFrame: Data.Values.kph
+            }
+            FuelLevel {
+                id: fuelLevel
+                x: 491
+                y: 404
+                scale: 0.8
+               // currentFuelLevel: Data.Values.fuelLevelActual
+            }
 
-    //     //     // StringMapper {
-    //     //     //     id: stringMapper2
-    //     //     //     input: { if(rangeMapper1.output >= 40 && rangeMapper1.output < 59) {
-    //     //     //                 2 } else if (rangeMapper1.output >= 59 && rangeMapper1.output < 80) {
-    //     //     //                 3 } else if (rangeMapper1.output >= 80 && rangeMapper1.output < 115) {
-    //     //     //                 4 } else if (rangeMapper1.output >= 115 && rangeMapper1.output < 155) {
-    //     //     //                 5 } else if (rangeMapper1.output >= 155) {
-    //     //     //                 6 } else if (rangeMapper1.output >= 1 && rangeMapper1.output < 40) {
-    //     //     //                 1 } else {
-    //     //     //                 0 }
-    //     //     //         }
-    //     //     //     decimals: 0
-    //     //     // }
 
-    //     //     RangeMapper {
-    //     //         id: rangeMapper1
-    //     //         outputMaximum: 345
-    //     //         inputMaximum: 1900
-    //     //         input: speed
-    //     //     }
-    //     // }
+        }
 
-    //     // Switch {
-    //     //     id:speedSwitch
-    //     //     checked: false
-    //     // }
+    }
 
-    //     Button {
-    //         id:button
-    //         x: 48
-    //         y: 50
-    //         text: "Gas"
+    Timeline {
+        id: timeline
+        animations: [
+            TimelineAnimation {
+                id: timelineAnimation
+                property: "currentFrame"
+                running: true
+                loops: 1
+                duration: 5000
+                from: 0
+                to: 5000
+            }
+        ]
+        startFrame: 0
+        endFrame: 5000
+        enabled: true
 
-    //         Timer {
-    //             id: longPressTimer
-    //             interval: 4 //your press-and-hold interval here
-    //             repeat: false
-    //             running: false
-    //             onTriggered: {
-    //                 button.pressAndHold()
-    //             }
-    //         }
 
-    //         onPressAndHold: {
-    //             if(pressed){
-    //                 if(speed >= 930) {
-    //                     longPressTimer.running = false
-    //                 } else {
-    //                     speed++
-    //                     longPressTimer.running = true
-    //                 }
-    //             }
-    //             else {
-    //                 longPressTimer.running = false
-    //             }
-    //         }
+        KeyframeGroup {
+            target: flipable
+            property: "flipAngle"
+            Keyframe {
+                value: 180
+                frame: 0
+            }
 
-    //         Timer {
-    //             id: decreaseTimer
-    //             interval: 30 //your press-and-hold interval here
-    //             repeat: false
-    //             running: false
-    //             onTriggered: {
-    //                 button.released()
-    //             }
-    //         }
+            Keyframe {
+                value: 180
+                frame: 2389
+            }
 
-    //         onReleased: {
-    //             if(speed != 0) {
-    //                 decreaseTimer.running = true
-    //                 speed--
-    //                 if(button.pressed) {
-    //                     decreaseTimer.running = false
-    //                 }
-    //             } else {
-    //                 decreaseTimer.running = false
-    //             }
-    //         }
-    //     }
+            Keyframe {
+                easing.bezierCurve: [0.90, 0.03, 0.69, 0.22, 1, 1]
+                value: 1.1
+                frame: 4117
+            }
+        }
 
-    //     Button {
-    //         id: butStop
-    //         x: 140
-    //         y: 50
-    //         text: "Stop"
-    //         Timer {
-    //             id: stopTimer
-    //             interval: 5 //your press-and-hold interval here
-    //             repeat: false
-    //             running: false
-    //             onTriggered: {
-    //                 butStop.pressAndHold()
-    //             }
-    //         }
+        KeyframeGroup {
+            target: flipable
+            property: "opacity"
+            Keyframe {
+                value: 0
+                frame: 0
+            }
 
-    //         onPressAndHold: {
-    //             if(pressed){
-    //                 if(speed <= 0) {
-    //                     stopTimer.running = false
-    //                 } else {
-    //                     speed--
-    //                     stopTimer.running = true
-    //                 }
-    //             }
-    //             else {
-    //                 stopTimer.running = false
-    //             }
-    //         }
+            Keyframe {
+                easing.bezierCurve: [0.17, 0.84, 0.44, 1.00, 1, 1]
+                value: 1
+                frame: 1015
+            }
+        }
 
-    //     }
 
-    // }
+    }
+
+
+    states: [
+        State {
+            name: "running"
+            when: !Data.Values.booting
+
+            PropertyChanges {
+                target:timeline
+                currentFrame: 5000
+                enabled: true
+            }
+        }
+
+    ]
 }
