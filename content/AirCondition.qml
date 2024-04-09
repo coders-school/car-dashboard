@@ -151,7 +151,7 @@ Item {
         id: currentTemperatureText
         x: 688
         y: 50
-        text: qsTr("20ºC")
+        text: (airConditionController.currentTemp).toFixed(1) + qsTr("ºC")
         font.pixelSize: 32
     }
 

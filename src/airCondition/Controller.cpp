@@ -20,4 +20,10 @@ void Controller::setASetFan(int fan) {
     emit aSetFanChanged(fan);
 }
 
+float Controller::getCurrentTemp() { return this->currentTemp; }
+void Controller::setCurrentTemp(float temp) {
+    this->currentTemp = temp;
+    emit currentTempChanged(temp);
+}
+
 }  // namespace AirCondition

@@ -143,3 +143,20 @@ TEST_F(AirConditionController_Test, aSetFan) {
     EXPECT_TRUE(controller.setProperty("aSetFan", 112));
     EXPECT_EQ(controller.getASetFan(), 112);
 }
+
+TEST_F(AirConditionController_Test, currentTemp) {
+    QObject::connect(&controller, &AirCondition::Controller::currentTempChanged, &signalTester,
+                     &SignalTester::slot_float);
+
+    EXPECT_CALL(signalTester, slot_float(20.5f)).Times(1);
+    controller.setCurrentTemp(20.5f);
+    EXPECT_EQ(controller.getCurrentTemp(), 20.5f);
+
+    QVariant property = controller.property("currentTemp");
+    ASSERT_TRUE(property.canConvert<float>());
+    EXPECT_EQ(property.toFloat(), 20.5f);
+
+    EXPECT_CALL(signalTester, slot_float(11.75f)).Times(1);
+    EXPECT_TRUE(controller.setProperty("currentTemp", 11.75f));
+    EXPECT_EQ(controller.getCurrentTemp(), 11.75f);
+}

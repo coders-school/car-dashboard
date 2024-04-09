@@ -16,6 +16,8 @@ class Controller : public QObject {
     // DIALS
     Q_PROPERTY(float aSetTemp READ getASetTemp WRITE setASetTemp NOTIFY aSetTempChanged FINAL)
     Q_PROPERTY(int aSetFan READ getASetFan WRITE setASetFan NOTIFY aSetFanChanged FINAL)
+    // INFO
+    Q_PROPERTY(float currentTemp READ getCurrentTemp WRITE setCurrentTemp NOTIFY currentTempChanged FINAL)
 
 public:
     explicit Controller(QObject *parent = nullptr);
@@ -24,6 +26,9 @@ public:
     void setASetTemp(float temp);
     int getASetFan();
     void setASetFan(int fan);
+
+    float getCurrentTemp();
+    void setCurrentTemp(float temp);
 
 signals:
     // BUTTONS
@@ -36,6 +41,8 @@ signals:
     // DIALS
     void aSetTempChanged(float temp);
     void aSetFanChanged(int fan);
+    // INFO
+    void currentTempChanged(float temp);
 
 private:
     // BUTTONS
@@ -48,6 +55,8 @@ private:
     // DIALS
     float aSetTemp = 25;
     int aSetFan = 0;
+    // INFO
+    float currentTemp = 25;
 };
 
 }  // namespace AirCondition
