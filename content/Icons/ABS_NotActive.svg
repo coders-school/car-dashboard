@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="13.593066mm"
+   height="9.3833427mm"
+   viewBox="0 0 13.593066 9.3833427"
+   version="1.1"
+   id="svg2407"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="ABS_NotActive.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2409"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="6.4782828"
+     inkscape:cx="0.92617136"
+     inkscape:cy="32.724721"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2404" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-49.728219,-140.81081)">
+    <path
+       style="fill:#999999;fill-opacity:1;stroke-width:0.144393"
+       d="m 62.269629,148.90385 c 1.40616,-2.10477 1.40177,-5.01806 -0.0106,-7.02934 -0.49441,-0.70406 -0.91533,-0.87007 -1.18282,-0.46651 -0.10531,0.1589 -0.0255,0.38363 0.30018,0.84518 1.31123,1.85838 1.3279,4.2974 0.0426,6.2263 -0.39148,0.58749 -0.4061,0.65568 -0.18553,0.8656 0.37375,0.35571 0.55545,0.27833 1.03618,-0.44123 z"
+       id="path138345-8" />
+    <path
+       style="fill:#999999;fill-opacity:1;stroke-width:0.144393"
+       d="m 52.062009,149.19697 c 0.0282,-0.0147 -0.16507,-0.32607 -0.4295,-0.69183 -0.60196,-0.83268 -1.02787,-2.11114 -1.02787,-3.08538 0,-0.97157 0.47241,-2.40883 1.03449,-3.14728 0.24509,-0.322 0.44562,-0.62855 0.44562,-0.68123 0,-0.13537 -0.46753,-0.61098 -0.60059,-0.61098 -0.22661,0 -1.16388,1.52526 -1.47621,2.40229 -0.27216,0.7642 -0.31319,1.13177 -0.2591,2.32092 0.0688,1.51278 0.42612,2.53201 1.24652,3.55567 0.37156,0.46361 0.38514,0.46788 0.69716,0.21873 0.17501,-0.13975 0.34128,-0.26616 0.36948,-0.28091 z"
+       id="path138339-0" />
+    <path
+       id="path138303-8"
+       style="fill:#999999;fill-opacity:1;stroke-width:0.144393"
+       d="m 56.460101,140.81087 c -1.033436,0.005 -2.073119,0.30834 -2.954341,0.94671 -3.211657,2.32656 -2.282712,7.05955 1.628324,8.29717 0.805659,0.25494 2.533474,0.14636 3.386873,-0.21291 1.007199,-0.42403 2.058789,-1.43521 2.528528,-2.43138 0.35915,-0.76164 0.39769,-0.98927 0.3514,-2.07532 -0.0398,-0.93371 -0.135808,-1.38262 -0.409277,-1.91255 -0.867111,-1.68026 -2.689294,-2.62026 -4.531507,-2.61172 z m 0.03256,0.87333 c 1.396301,0.0101 2.915963,0.89392 3.582211,2.13682 1.509718,2.81637 -1.366315,6.21409 -4.543392,5.36763 -0.40703,-0.10845 -0.780334,-0.19967 -0.829924,-0.20309 -0.0496,-0.003 -0.408871,-0.27365 -0.798401,-0.59996 -2.653137,-2.22262 -1.359138,-6.2197 2.161109,-6.67556 0.140719,-0.0182 0.283952,-0.0269 0.428397,-0.0258 z" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.54293px;line-height:7.03001px;font-family:'MV Boli';-inkscape-font-specification:'MV Boli';fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.251072;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       x="50.563938"
+       y="153.63499"
+       id="text15295"
+       transform="scale(1.0471228,0.95499783)"><tspan
+         sodipodi:role="line"
+         id="tspan15293"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#999999;fill-opacity:1;stroke-width:0.251072"
+         x="50.563938"
+         y="153.63499">ABS</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Warstwa 2"
+     transform="translate(-49.728219,-140.81081)" />
+</svg>

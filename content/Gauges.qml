@@ -27,7 +27,6 @@ Item {
                 width: 910
                 height: 550
 
-
             }
 
             SpeedGauge {
@@ -37,7 +36,8 @@ Item {
                 width: 500
                 height: 500
                 scale: 0.9
-                //int_kmh
+                kmh_gauge:23
+                kmh_string:"test"
                 //kphFrame: Data.Values.kph
             }
             FuelLevel {
@@ -45,10 +45,33 @@ Item {
                 x: 491
                 y: 404
                 scale: 0.8
-               // currentFuelLevel: Data.Values.fuelLevelActual
+                fuelLevel: 3
             }
-
-
+            RPMGauge {
+                id: rpmGauge
+                x: -17
+                y: 28
+                scale: 0.9
+                rpmFrame: 920
+            }
+            EngineTemp {
+                id: engineTemp
+                x: 46
+                y: 406
+                scale: 0.8
+                currentEngineTemperature:4
+            }
+            IconsLight {
+                id: iconsLight
+                x: 357
+                y: 8
+            }
+            IconsMain {
+                id: iconsMain
+                x: 55
+                y: 462
+                scale: 0.7
+            }
         }
 
     }
@@ -108,6 +131,8 @@ Item {
 
 
     }
+
+
 
 
     states: [
