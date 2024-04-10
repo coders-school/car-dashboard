@@ -17,7 +17,8 @@ Item {
     id: speed
     width: 500
     height: 500
-    //property alias int_kmh
+    property alias kmh_gauge:kphTimeline.currentFrame
+    property alias kmh_string:speedText.text
 
     Image {
         id: main
@@ -157,7 +158,7 @@ Item {
         fillMode: Image.PreserveAspectFit
     }
     Text {
-        id: kph_number_195_91
+        id: speedText
         x: 179
         y: 202
         width: 141
