@@ -29,11 +29,9 @@ if (Qt6_VERSION VERSION_LESS 6.2.0)
 message(FATAL_ERROR "You need Qt 6.2.0 or newer to build the application.")
 endif()
 
-FILE(GLOB_RECURSE SOURCES_TEST
-    "*.cpp"
-)
-LIST(APPEND SOURCES_TEST 
-    ${MAIN_SOURCES}
+
+set(SOURCES_TEST 
+    ${ALL_FILES}
 )
 LIST(FILTER SOURCES_TEST EXCLUDE
     REGEX ${FILE_MAIN_CPP}
