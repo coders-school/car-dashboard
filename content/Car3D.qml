@@ -522,6 +522,11 @@ Item {
                 target: drive
                 color: "darkgreen"
             }
+
+            PropertyChanges {
+                target: road
+                opacity: 1
+            }
         },
 
         State {
