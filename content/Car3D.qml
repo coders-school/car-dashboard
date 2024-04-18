@@ -9,8 +9,11 @@ Item {
     property double rotationDoorRight: 0
     property double rotationDoorLeft: 0
     // property double rotationTrunk: 0
+    property bool switchDoorRight: false
+    property bool switchDoorLeft: false
+    property bool switchDoorTrunk: false
 
-      View3D {
+    View3D {
 
         id: view3D
         anchors.fill: parent
@@ -113,55 +116,24 @@ Item {
 
         }
 
-        // NumberAnimation {
-        //     id: rotationCar
-        //     target: car3Dmodel
-        //     property: "eulerRotation.y"
-        //     from: car3Dmodel.y
-        //     to: car3Dmodel.y + 360
-        //     loops: Animation.Infinite
-        //     duration: 60000
-        //     // running: true
-        // }
-
-        // NumberAnimation {
-        //     id: trunkAnim
-        //     target: car3Dmodel
-        //     property: "trunkAngle"   //look in folder asset_imports/Quick3DAssets/Supra/Supra.qml
-        //     from: 0
-        //     to: 50
-        //     duration: 1000
-        //     // running: true
-        //     // loops: Animation.Infinite
-        // }
-
-        // NumberAnimation {
-        //     id: leftDoorAnim
-        //     target: car3Dmodel
-        //     property: "leftDoorAngle"   //look in folder asset_imports/Quick3DAssets/Supra/Supra.qml
-        //     from: 0
-        //     to: -50
-        //     duration: 1000
-        //     // running: true
-        //     // loops: Animation.Infinite
-        // }
-
-        Timeline {
-            id: timeline
-            animations: [
-                TimelineAnimation {
-                    id: timelineAnimation
-                    running: false
-                    loops: 1
-                    duration: 1000
-                    to: 1000
-                    from: 0
-                }
-            ]
-            startFrame: 0
-            endFrame: 4000
-            enabled: false
+        NumberAnimation {
+            id: trunkAnim
+            target: car3Dmodel
+            property: "trunkAngle"   //look in folder asset_imports/Quick3DAssets/Supra/Supra.qml
+            from: 0
+            to: 50
+            duration: 600
         }
+
+        NumberAnimation {
+            id: leftDoorAnim
+            target: car3Dmodel
+            property: "leftDoorAngle"   //look in folder asset_imports/Quick3DAssets/Supra/Supra.qml
+            from: 0
+            to: -50
+            duration: 600
+        }
+
 
 
         NumberAnimation {
@@ -170,9 +142,7 @@ Item {
             property: "rightDoorAngle"  //look in folder asset_imports/Quick3DAssets/Supra/Supra.qml
             from: 0
             to: 50
-            duration: 1000
-            // running: true
-            // loops: Animation.Infinite
+            duration: 600
         }
     }
 
@@ -183,14 +153,20 @@ Item {
         y: 100
         onClicked: {
             car3DClass.state = "leftdoorChange"
-            // leftDoorAnim.running = true
-            // if(leftDoorAnim.to == 0) {
-            //     leftDoorAnim.from = 0
-            //     leftDoorAnim.to = -50
-            // } else {
-            //     leftDoorAnim.from = -50
-            //     leftDoorAnim.to = 0
-            // }
+            leftDoorAnim.running = true
+            if(switchDoorLeft == false) {
+                leftDoorAnim.from = -50
+                leftDoorAnim.to = 0
+                switchDoorLeft = true
+
+            } else if (switchDoorLeft == true) {
+                leftDoorAnim.from = 0
+                leftDoorAnim.to = -50
+                switchDoorLeft = false
+                if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
+                    car3DClass.state = "Home"
+                }
+            }
         }
     }
 
@@ -201,14 +177,21 @@ Item {
         y: 100
         onClicked: {
             car3DClass.state = "trunkChange"
-            // trunkAnim.running = true
-            // if(trunkAnim.to == 0) {
-            //     trunkAnim.from = 0
-            //     trunkAnim.to = 50
-            // } else {
-            //     trunkAnim.from = 50
-            //     trunkAnim.to = 0
-            // }
+            trunkAnim.running = true
+            if(switchDoorTrunk == true) {
+                trunkAnim.from = 0
+                trunkAnim.to = 50
+                switchDoorTrunk = false
+                if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
+                    car3DClass.state = "Home"
+                }
+
+            } else if (switchDoorTrunk == false) {
+                trunkAnim.from = 50
+                trunkAnim.to = 0
+                switchDoorTrunk = true
+
+            }
         }
     }
 
@@ -219,26 +202,62 @@ Item {
         y: 100
         onClicked: {
             car3DClass.state = "rightdoorChange"
-            // rightDoorAnim.running = true
-            // if(rightDoorAnim.to == 0) {
-            //     rightDoorAnim.from = 0
-            //     rightDoorAnim.to = 50
-            // } else {
-            //     rightDoorAnim.from = 50
-            //     rightDoorAnim.to = 0
-            // }
+            rightDoorAnim.running = true
+            if(switchDoorRight == true) {
+                rightDoorAnim.from = 0
+                rightDoorAnim.to = 50
+                switchDoorRight = false
+                if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
+                    car3DClass.state = "Home"
+                }
+
+            } else if (switchDoorRight == false) {
+                rightDoorAnim.from = 50
+                rightDoorAnim.to = 0
+                switchDoorRight = true
+
+            }
         }
     }
 
-    Button{
-        id:switchHome
-        text:"Home"
-        x: 400
-        y: 150
-        onClicked: {
-            car3DClass.state = "Home"
-        }
+    Switch {
+        enabled: false
+        id: switchLeft
+        x: 200
+        y: 54
+        width: 120
+        height: 40
+        text: "LeftDoor"
+        checked: switchDoorLeft
     }
+
+    Switch {
+        enabled: false
+        id: switchRight
+        x: 600
+        y: 54
+        text: "RightDoor"
+        checked: switchDoorRight
+    }
+
+    Switch {
+        enabled: false
+        id: switcheTrunk
+        x: 400
+        y: 54
+        text: "Trunk"
+        checked: switchDoorTrunk
+    }
+
+    // Button{
+    //     id:switchHome
+    //     text:"Home"
+    //     x: 400
+    //     y: 150
+    //     onClicked: {
+    //         car3DClass.state = "Home"
+    //     }
+    // }
 
     Button{
         id:switchDrive
@@ -267,49 +286,18 @@ Item {
     Keys.onUpPressed: car3DClass.state = "Straight"
 
     states: [
+
         State {
             name: "Home"
 
             PropertyChanges {
-                target: timeline
-                enabled: true
-            }
-
-            PropertyChanges {
-                target: timelineAnimation
-                running: true
-            }
-
-
-            PropertyChanges {
                 target: car3Dmodel
                 eulerRotation.y: 320
-            }
-
-            PropertyChanges {
-                target: car3Dmodel
-                leftDoorAngle: 0
-            }
+            }         
         },
 
-
         State {
-            name: "leftdoorChange"
-
-            PropertyChanges {
-                target: timeline
-                enabled: true
-            }
-
-            PropertyChanges {
-                target: timelineAnimation
-                running: true
-            }
-
-            PropertyChanges {
-                target: car3Dmodel
-                leftDoorAngle: -50
-            }
+            name: "leftdoorChange"           
 
             PropertyChanges {
                 target: car3Dmodel
@@ -318,27 +306,7 @@ Item {
         },
 
         State {
-            name: "rightdoorChange"
-
-            PropertyChanges {
-                target: timeline
-                enabled: true
-            }
-
-            PropertyChanges {
-                target: timelineAnimation
-                running: true
-            }
-
-            PropertyChanges {
-                target: car3Dmodel
-                rightDoorAngle: 50
-            }
-
-            // PropertyChanges {
-            //     target: car3Dmodel
-            //     leftDoorAngle: rotationDoorLeft
-            // }
+            name: "rightdoorChange"            
 
             PropertyChanges {
                 target: car3Dmodel
@@ -347,27 +315,13 @@ Item {
         },
 
         State {
-            name: "trunkChange"
-
-            PropertyChanges {
-                target: timeline
-                enabled: true
-            }
-
-            PropertyChanges {
-                target: timelineAnimation
-                running: true
-            }
+            name: "trunkChange"          
 
             PropertyChanges {
                 target: car3Dmodel
                 eulerRotation.y: 180
             }
 
-            PropertyChanges {
-                target: car3Dmodel
-                trunkAngle: 50
-            }
         },
 
         State {
@@ -393,22 +347,23 @@ Item {
                 opacity: 0.6
 
             }
+
             PropertyChanges {
                 target: midlleline1
                 opacity: 0.6
 
             }
+
             PropertyChanges {
                 target: midlleline2
                 opacity: 0.6
 
             }
+
             PropertyChanges {
                 target: rightline
                 opacity: 0.6
-
             }
-
         },
 
         State {
@@ -504,15 +459,9 @@ Item {
 
         Transition {
             NumberAnimation {
-                properties: "eulerRotation.y, trunkAngle, rightDoorAngle, leftDoorAngle, x, y, z,  eulerRotation.z, eulerRotation.x, opacity"
-                easing: Easing.InOutQuad
+                properties: "eulerRotation.y, x, y, z,  eulerRotation.z, eulerRotation.x, opacity"
                 duration: 1000
             }
         }
     ]
-
-
-
-
-
 }
