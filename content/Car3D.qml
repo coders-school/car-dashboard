@@ -6,9 +6,6 @@ import QtQuick.Timeline 1.0
 Item {
 
     id: car3DClass
-    property double rotationDoorRight: 0
-    property double rotationDoorLeft: 0
-    // property double rotationTrunk: 0
     property bool switchDoorRight: false
     property bool switchDoorLeft: false
     property bool switchDoorTrunk: false
@@ -57,61 +54,72 @@ Item {
                 eulerRotation.y: 320
                 eulerRotation.x: -0
                 z: -54.98334
-                scale: Qt.vector3d(80, 80 , 80)
-                leftDoorAngle: rotationDoorLeft
-                rightDoorAngle: rotationDoorRight
+                scale: Qt.vector3d(80, 80, 80)
             }
         }
 
         Model {
-            id:leftline
+            id: road
+            x: 9.575
+            y: -91.738
+            source: "#Cube"
+            z: -5820.31836
+            opacity: 0
+            scale: Qt.vector3d(9.3, 0.01, 120)
+            materials: PrincipledMaterial {
+                baseColor: "black"
+            }
+        }
+
+        Model {
+            id: leftline
             x: -430.172
             y: -90.867
             source: "#Cube"
-            z: -1250.27063
-            scale: Qt.vector3d(0.08,0.01,30)
+            z: -5820.31836
             opacity: 0
+            scale: Qt.vector3d(0.08, 0.01, 120)
             materials: PrincipledMaterial {
-                baseColor: "black"
+                baseColor: "white"
             }
-        }
+        }       
 
         Model {
-            id:midlleline1
+            id: midlleline1
             x: -130.172
             y: -90.867
             source: "#Cube"
-            z: -1250.27063
-            scale: Qt.vector3d(0.08,0.01,30)
+            z: -5820.31836
             opacity: 0
+            scale: Qt.vector3d(0.08, 0.01, 120)
             materials: PrincipledMaterial {
-                baseColor: "black"
+                baseColor: "white"
             }
         }
 
         Model {
-            id:midlleline2
+            id: midlleline2
             x: 150.172
             y: -90.867
             source: "#Cube"
-            z: -1250.27063
-            scale: Qt.vector3d(0.08,0.01,30)
+            z: -5820.31836
             opacity: 0
+            scale: Qt.vector3d(0.08, 0.01, 120)
             materials: PrincipledMaterial {
-                baseColor: "black"
+                baseColor: "white"
             }
         }
 
         Model {
-            id:rightline
+            id: rightline
             x: 450.172
             y: -90.867
             source: "#Cube"
-            z: -1250.27063
-            scale: Qt.vector3d(0.08,0.01,30)
+            z: -5820.31836
             opacity: 0
+            scale: Qt.vector3d(0.08, 0.01, 120)
             materials: PrincipledMaterial {
-                baseColor: "black"
+                baseColor: "white"
             }
 
         }
@@ -190,7 +198,6 @@ Item {
                 trunkAnim.from = 50
                 trunkAnim.to = 0
                 switchDoorTrunk = true
-
             }
         }
     }
@@ -215,7 +222,6 @@ Item {
                 rightDoorAnim.from = 50
                 rightDoorAnim.to = 0
                 switchDoorRight = true
-
             }
         }
     }
@@ -248,16 +254,6 @@ Item {
         text: "Trunk"
         checked: switchDoorTrunk
     }
-
-    // Button{
-    //     id:switchHome
-    //     text:"Home"
-    //     x: 400
-    //     y: 150
-    //     onClicked: {
-    //         car3DClass.state = "Home"
-    //     }
-    // }
 
     Button{
         id:switchDrive
@@ -364,6 +360,11 @@ Item {
                 target: rightline
                 opacity: 0.6
             }
+
+            PropertyChanges {
+                target: road
+                opacity: 1
+            }
         },
 
         State {
@@ -408,6 +409,11 @@ Item {
                 opacity: 0.6
 
             }
+
+            PropertyChanges {
+                target: road
+                opacity: 1
+            }
         },
 
         State {
@@ -451,6 +457,11 @@ Item {
                 target: rightline
                 opacity: 0.6
 
+            }
+
+            PropertyChanges {
+                target: road
+                opacity: 1
             }
         }
     ]
