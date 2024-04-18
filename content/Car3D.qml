@@ -12,7 +12,6 @@ Item {
     property bool switchDoorTrunk: false
 
     View3D {
-
         id: view3D
         anchors.fill: parent
         environment: sceneEnvironment
@@ -526,6 +525,11 @@ Item {
             PropertyChanges {
                 target: road
                 opacity: 1
+            }
+
+            PropertyChanges {
+                target: linesAnimation
+                running: true
             }
         },
 
