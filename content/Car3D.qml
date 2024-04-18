@@ -2,16 +2,16 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick3D 6.4
 import Quick3DAssets.Supra
+import Quick3DAssets.Road_Bend
 import QtQuick.Timeline 1.0
-Item {
 
+Item {    
     id: car3DClass
     property bool switchDoorRight: false
     property bool switchDoorLeft: false
     property bool switchDoorTrunk: false
 
     View3D {
-
         id: view3D
         anchors.fill: parent
         environment: sceneEnvironment
@@ -60,12 +60,12 @@ Item {
 
         Model {
             id: road
-            x: 9.575
-            y: -91.738
+            x: 7.172
+            y: -95.309
             source: "#Cube"
             z: -5820.31836
             opacity: 0
-            scale: Qt.vector3d(9.3, 0.01, 120)
+            scale: Qt.vector3d(9.5, 0.01, 120)
             materials: PrincipledMaterial {
                 baseColor: "black"
             }
@@ -74,32 +74,6 @@ Item {
         Model {
             id: leftline
             x: -430.172
-            y: -90.867
-            source: "#Cube"
-            z: -5820.31836
-            opacity: 0
-            scale: Qt.vector3d(0.08, 0.01, 120)
-            materials: PrincipledMaterial {
-                baseColor: "white"
-            }
-        }       
-
-        Model {
-            id: midlleline1
-            x: -130.172
-            y: -90.867
-            source: "#Cube"
-            z: -5820.31836
-            opacity: 0
-            scale: Qt.vector3d(0.08, 0.01, 120)
-            materials: PrincipledMaterial {
-                baseColor: "white"
-            }
-        }
-
-        Model {
-            id: midlleline2
-            x: 150.172
             y: -90.867
             source: "#Cube"
             z: -5820.31836
@@ -121,7 +95,34 @@ Item {
             materials: PrincipledMaterial {
                 baseColor: "white"
             }
+        }
 
+        Road_Bend  {
+            id: midlleline1
+            opacity: 0
+            x: -39.828
+            y: -90.865
+            eulerRotation.z: 0
+            eulerRotation.x: -0.00001
+            scale.z: 100
+            z: 167.32294
+            scale.x: 80
+            eulerRotation.y: -270
+            mat: lanelineMaterial
+        }
+
+        Road_Bend  {
+            id: midlleline2
+            opacity: 0
+            x: -349.9
+            y: -90.865
+            eulerRotation.z: 0
+            eulerRotation.x: -0.00001
+            scale.z: 100
+            z: 167.32301
+            scale.x: 80
+            eulerRotation.y: -270
+            mat: lanelineMaterial
         }
 
         NumberAnimation {
@@ -154,7 +155,17 @@ Item {
         }
     }
 
-    Button{
+    NumberAnimation {
+        id:linesAnimation
+        target:lanelines;
+        property: "positionV"
+        from: 0
+        to: 1
+        duration: 1000
+        loops: -1
+    }
+
+    Button {
         id:switchLefttdoor
         text:"Left Door"
         x: 200
@@ -178,7 +189,7 @@ Item {
         }
     }
 
-    Button{
+    Button {
         id:switchTrunk
         text:"Trunk"
         x: 400
@@ -202,7 +213,7 @@ Item {
         }
     }
 
-    Button{
+    Button {
         id:switchRightdoor
         text:"Right Door"
         x: 600
@@ -267,14 +278,20 @@ Item {
 
     Item {
         id: __materialLibrary__
+        DefaultMaterial {
+            id: lanelineMaterial
+            diffuseColor: "#ffffff"
+            diffuseMap: lanelines
+            Texture {
+                id: lanelines
+                source: "images/lanelines.png"
+                tilingModeHorizontal: Texture.Repeat
+                tilingModeVertical: Texture.Repeat
+            }
+            objectName: "lanelineMaterial"
+            depthDrawMode: Material.NeverDepthDraw
+        }
 
-    }
-
-    Timeline {
-        id: timeline1
-        startFrame: 0
-        endFrame: 1000
-        enabled: false
     }
 
     Keys.onLeftPressed: car3DClass.state = "Left"
@@ -289,11 +306,11 @@ Item {
             PropertyChanges {
                 target: car3Dmodel
                 eulerRotation.y: 320
-            }         
+            }
         },
 
         State {
-            name: "leftdoorChange"           
+            name: "leftdoorChange"
 
             PropertyChanges {
                 target: car3Dmodel
@@ -302,7 +319,7 @@ Item {
         },
 
         State {
-            name: "rightdoorChange"            
+            name: "rightdoorChange"
 
             PropertyChanges {
                 target: car3Dmodel
@@ -311,7 +328,7 @@ Item {
         },
 
         State {
-            name: "trunkChange"          
+            name: "trunkChange"
 
             PropertyChanges {
                 target: car3Dmodel
@@ -340,30 +357,34 @@ Item {
 
             PropertyChanges {
                 target: leftline
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: midlleline1
-                opacity: 0.6
-
+                opacity: 0.8
             }
 
             PropertyChanges {
                 target: midlleline2
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: rightline
-                opacity: 0.6
+                opacity: 0.8
             }
 
             PropertyChanges {
                 target: road
                 opacity: 1
+            }
+
+            PropertyChanges {
+                target: linesAnimation
+                running: true
             }
         },
 
@@ -388,31 +409,36 @@ Item {
 
             PropertyChanges {
                 target: leftline
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: midlleline1
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: midlleline2
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: rightline
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: road
                 opacity: 1
+            }
+
+            PropertyChanges {
+                target: linesAnimation
+                running: true
             }
         },
 
@@ -437,31 +463,36 @@ Item {
 
             PropertyChanges {
                 target: leftline
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: midlleline1
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: midlleline2
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: rightline
-                opacity: 0.6
+                opacity: 0.8
 
             }
 
             PropertyChanges {
                 target: road
                 opacity: 1
+            }
+
+            PropertyChanges {
+                target: linesAnimation
+                running: true
             }
         }
     ]

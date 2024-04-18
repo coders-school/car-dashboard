@@ -2,22 +2,21 @@
 ### Do not change
 
 
-
 qt_add_library(content STATIC)
 qt6_add_qml_module(content
     URI "content"
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
-    QML_FILES
-        MusicPlayer.qml
-        PhoneList.qml
-        MainScreeen.ui.qml
-        MenuButton.qml
-        App.qml
+    QML_FILES    
+        Gauges.qml    
+        MainScreeen.ui.qml                
         AirCondition.qml
-        Gauges.qml
+        App.qml
+        MenuButton.qml        
+        MusicPlayer.qml
         Navigation.qml
-        Car3D.qml
-        ContactModel.qml
-        PhoneListToolBar.qml
+        PhoneList.qml
+        3DCarTest.qml
+    RESOURCES
+        images/lanelines.png
 )
