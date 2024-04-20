@@ -531,6 +531,11 @@ Item {
                 target: linesAnimation
                 running: true
             }
+
+            PropertyChanges {
+                target: drive
+                color: "darkgreen"
+            }
         },
 
         State {
