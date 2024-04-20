@@ -27,13 +27,13 @@ Item {
 
             DirectionalLight {
                 id: directionalLight
-                x: -388.973
-                y: 111.084
-                brightness: 1.7
-                eulerRotation.z: -0
-                eulerRotation.y: 0
-                eulerRotation.x: -19.561
-                z: 310.28943
+                x: -375.318
+                y: 904.977
+                brightness: 2.5
+                eulerRotation.z: 8.13115
+                eulerRotation.y: -22.71501
+                eulerRotation.x: -42.28757
+                z: 781.37354
             }
 
             PerspectiveCamera {
@@ -48,12 +48,12 @@ Item {
 
             Supra {
                 id: car3Dmodel
-                x: 11.504
-                y: -90.867
+                x: 6.016
+                y: -68.912
                 eulerRotation.z: -0.00001
                 eulerRotation.y: 320
                 eulerRotation.x: -0
-                z: -54.98334
+                z: -47.93786
                 scale: Qt.vector3d(80, 80, 80)
             }
         }
@@ -130,8 +130,8 @@ Item {
             target: car3Dmodel
             property: "trunkAngle"   //look in folder asset_imports/Quick3DAssets/Supra/Supra.qml
             from: 0
-            to: 50
-            duration: 600
+            to: 35
+            duration: 500
         }
 
         NumberAnimation {
@@ -142,8 +142,6 @@ Item {
             to: -50
             duration: 600
         }
-
-
 
         NumberAnimation {
             id: rightDoorAnim
@@ -165,75 +163,169 @@ Item {
         loops: -1
     }
 
-    Button {
+    RoundButton {
         id:switchLefttdoor
-        text:"Left Door"
-        x: 200
-        y: 100
-        onClicked: {
-            car3DClass.state = "leftdoorChange"
-            leftDoorAnim.running = true
-            if(switchDoorLeft == false) {
-                leftDoorAnim.from = -50
-                leftDoorAnim.to = 0
-                switchDoorLeft = true
+        x: 126
+        y: 262
+        width: 69
+        height: 57
 
-            } else if (switchDoorLeft == true) {
-                leftDoorAnim.from = 0
-                leftDoorAnim.to = -50
-                switchDoorLeft = false
-                if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
-                    car3DClass.state = "Home"
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: {
+                leftdoor.scale = 1.1
+            }
+            onExited: {
+                leftdoor.scale = 1
+            }
+            onClicked: {
+                car3DClass.state = "leftdoorChange"
+                leftDoorAnim.running = true
+                if(switchDoorLeft == false) {
+                    leftDoorAnim.from = -50
+                    leftDoorAnim.to = 0
+                    switchDoorLeft = true
+                    leftdoor.color = "darkgreen"
+
+                } else if (switchDoorLeft == true) {
+                    leftDoorAnim.from = 0
+                    leftDoorAnim.to = -50
+                    switchDoorLeft = false
+                    leftdoor.color = "black"
+                    if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
+                        car3DClass.state = "Home"
+                    }
                 }
             }
         }
+
+        background: Rectangle {
+            color: "transparent"
+        }
+
+        ColorImage {
+            id: leftdoor
+            x: 18
+            y: -6
+            width: 56
+            height: 50
+            source: "images/leftdoor.png"
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+        }      
     }
 
-    Button {
+    RoundButton {
         id:switchTrunk
-        text:"Trunk"
-        x: 400
-        y: 100
-        onClicked: {
-            car3DClass.state = "trunkChange"
-            trunkAnim.running = true
-            if(switchDoorTrunk == true) {
-                trunkAnim.from = 0
-                trunkAnim.to = 50
-                switchDoorTrunk = false
-                if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
-                    car3DClass.state = "Home"
-                }
+        x: 422
+        y: 453
+        width: 69
+        height: 57
 
-            } else if (switchDoorTrunk == false) {
-                trunkAnim.from = 50
-                trunkAnim.to = 0
-                switchDoorTrunk = true
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: {
+                trunk.scale = 1.1
+            }
+            onExited: {
+                trunk.scale = 1
+            }
+            onClicked: {
+                car3DClass.state = "trunkChange"
+                trunkAnim.running = true
+                if(switchDoorTrunk == true)
+                {
+                    trunkAnim.from = 0
+                    trunkAnim.to = 30
+                    switchDoorTrunk = false
+                    trunk.color = "black"
+                    if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
+                        car3DClass.state = "Home"
+                    }
+
+                } else if (switchDoorTrunk == false) {
+                    trunkAnim.from = 30
+                    trunkAnim.to = 0
+                    switchDoorTrunk = true
+                    trunk.color = "darkgreen"
+                }
             }
         }
+
+        background: Rectangle {
+            color: "transparent"
+        }
+
+        ColorImage {
+            id: trunk
+            x: 18
+            y: -6
+            width: 56
+            height: 46
+            source: "images/trunk.png"
+            anchors.verticalCenterOffset: -1
+            anchors.horizontalCenterOffset: 6
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+        }       
     }
 
-    Button {
+    RoundButton {
         id:switchRightdoor
-        text:"Right Door"
-        x: 600
-        y: 100
-        onClicked: {
-            car3DClass.state = "rightdoorChange"
-            rightDoorAnim.running = true
-            if(switchDoorRight == true) {
-                rightDoorAnim.from = 0
-                rightDoorAnim.to = 50
-                switchDoorRight = false
-                if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
-                    car3DClass.state = "Home"
-                }
+        x: 716
+        y: 262
+        width: 69
+        height: 57
 
-            } else if (switchDoorRight == false) {
-                rightDoorAnim.from = 50
-                rightDoorAnim.to = 0
-                switchDoorRight = true
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: {
+                rightdoor.scale = 1.1
             }
+            onExited: {
+                rightdoor.scale = 1
+            }
+            onClicked: {
+                car3DClass.state = "rightdoorChange"
+                rightDoorAnim.running = true
+                if(switchDoorRight == true) {
+                    rightDoorAnim.from = 0
+                    rightDoorAnim.to = 50
+                    switchDoorRight = false
+                    rightdoor.color = "black"
+                    if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
+                        car3DClass.state = "Home"
+                    }
+
+                } else if (switchDoorRight == false) {
+                    rightDoorAnim.from = 50
+                    rightDoorAnim.to = 0
+                    switchDoorRight = true
+                    rightdoor.color = "darkgreen"
+                }
+            }
+        }
+
+
+        background: Rectangle {
+            color: "transparent"
+        }
+
+        ColorImage {
+            id: rightdoor
+            x: 18
+            y: -6
+            width: 56
+            height: 50
+            source: "images/rightdoor.png"
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
         }
     }
 
@@ -266,37 +358,75 @@ Item {
         checked: switchDoorTrunk
     }
 
-    Button{
+    RoundButton{
         id:switchDrive
-        text:"Drive"
-        x: 400
-        y: 470
-        onClicked: {
-            car3DClass.state = "Straight"
+        x: 422
+        y: 113
+        width: 69
+        height: 57
+
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: {
+                drive.scale = 1.1
+            }
+
+            onExited: {
+                drive.scale = 1
+            }
+
+            onClicked: {
+                car3DClass.state = "Straight"
+            }
+        }
+
+        ColorImage {
+            id: drive
+            x: 18
+            y: -6
+            width: 46
+            height: 45
+            source: "images/steering-wheel.png"
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+        }
+
+        background: Rectangle {
+            color: "transparent"
         }
     }
 
     Item {
         id: __materialLibrary__
+
         DefaultMaterial {
             id: lanelineMaterial
             diffuseColor: "#ffffff"
             diffuseMap: lanelines
+
             Texture {
                 id: lanelines
                 source: "images/lanelines.png"
                 tilingModeHorizontal: Texture.Repeat
                 tilingModeVertical: Texture.Repeat
             }
+
             objectName: "lanelineMaterial"
             depthDrawMode: Material.NeverDepthDraw
         }
 
     }
 
-    Keys.onLeftPressed: car3DClass.state = "Left"
-    Keys.onRightPressed: car3DClass.state = "Right"
-    Keys.onUpPressed: car3DClass.state = "Straight"
+    Item {
+        anchors.fill: parent
+        focus: true
+        // Keys.onLeftPressed: console.log("move left")
+        Keys.onUpPressed: car3DClass.state = "Straight"
+        Keys.onRightPressed: car3DClass.state = "Right"
+        Keys.onLeftPressed: car3DClass.state = "Left"
+    }
 
     states: [
 
@@ -386,6 +516,11 @@ Item {
                 target: linesAnimation
                 running: true
             }
+
+            PropertyChanges {
+                target: drive
+                color: "darkgreen"
+            }
         },
 
         State {
@@ -439,6 +574,11 @@ Item {
             PropertyChanges {
                 target: linesAnimation
                 running: true
+            }
+
+            PropertyChanges {
+                target: drive
+                color: "darkgreen"
             }
         },
 
@@ -494,12 +634,17 @@ Item {
                 target: linesAnimation
                 running: true
             }
+
+            PropertyChanges {
+                target: drive
+                color: "darkgreen"
+            }
         }
     ]
 
     transitions:[
 
-        Transition {
+        Transition {            
             NumberAnimation {
                 properties: "eulerRotation.y, x, y, z,  eulerRotation.z, eulerRotation.x, opacity"
                 duration: 1000
