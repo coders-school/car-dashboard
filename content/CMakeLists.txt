@@ -8,6 +8,7 @@ qt6_add_qml_module(content
     URI "content"
     VERSION 1.0
     QML_FILES
+
         AirCondition.qml
         App.qml
         Car3D.qml
@@ -37,5 +38,18 @@ qt6_add_qml_module(content
         MainBackground/MainBackground.svg
         SpeedGaugePicture/MainBackground.svg
         SpeedGaugePicture/SmallBackgroundSpedometer.svg
+=======
+        MusicPlayer.qml
+        PhoneList.qml
+        MainScreeen.ui.qml
+        MenuButton.qml
+        App.qml
+        AirCondition.qml
+        Gauges.qml
+        Navigation.qml
+        Car3D.qml
+        ContactModel.qml
+        PhoneListToolBar.qml
+
 
 )
