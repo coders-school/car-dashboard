@@ -9,6 +9,7 @@ qt6_add_qml_module(content
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
+        ContactDelegate.qml
         MusicPlayer.qml
         PhoneList.qml
         MainScreeen.ui.qml
