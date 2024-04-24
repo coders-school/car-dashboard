@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="14.95309mm"
+   height="10.84637mm"
+   viewBox="0 0 14.95309 10.84637"
+   version="1.1"
+   id="svg5969"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="charging_NotActive.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5971"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.2391414"
+     inkscape:cx="-101.2614"
+     inkscape:cy="8.0268185"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs5966" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-120.78798,-157.37127)">
+    <path
+       style="fill:#999999;fill-opacity:1;stroke-width:0.144393"
+       d="m 125.17933,160.87208 c -0.0467,-0.38608 -0.0511,-0.38751 -1.34193,-0.42807 l -1.2951,-0.0407 v 0.42806 0.42808 h 1.34193 1.34193 z"
+       id="path138571-1" />
+    <path
+       style="fill:#999999;fill-opacity:1;stroke-width:0.144393"
+       d="m 133.42493,161.67656 c 0,-0.37767 0.0482,-0.42259 0.45386,-0.42259 0.40781,0 0.44911,-0.0393 0.40703,-0.38738 -0.0368,-0.30426 -0.13416,-0.39693 -0.45386,-0.43194 -0.34089,-0.0373 -0.40703,-0.11172 -0.40703,-0.45781 0,-0.36524 -0.0516,-0.41323 -0.44403,-0.41323 -0.39247,0 -0.44404,0.048 -0.44404,0.41323 0,0.34609 -0.0661,0.42048 -0.40703,0.45781 -0.31663,0.0347 -0.4172,0.12834 -0.45283,0.42178 -0.039,0.32151 0.0156,0.38391 0.37003,0.42259 0.32907,0.0359 0.4256,0.1262 0.46266,0.43276 0.0392,0.32442 0.11739,0.38737 0.48104,0.38737 0.38377,0 0.4342,-0.0491 0.4342,-0.42259 z"
+       id="path138569-2" />
+    <path
+       id="path138565-1"
+       style="fill:#999999;fill-opacity:1;stroke-width:0.144393"
+       d="m 122.58322,157.37127 -0.0465,0.45682 -0.0465,0.45734 -0.85111,-0.0253 -0.85111,-0.0253 v 4.99142 4.99143 h 7.47654 7.47655 l -0.0388,-4.96507 -0.0388,-4.96559 -0.77721,-0.0424 c -0.75155,-0.0412 -0.77721,-0.0562 -0.77721,-0.45785 v -0.41548 h -1.33222 -1.3317 v 0.42272 c 0,0.28016 -0.075,0.42348 -0.22221,0.42581 -0.12211,0.002 -1.38763,0.004 -2.81223,0.004 -1.42461,0 -2.72332,-0.002 -2.88613,-0.004 -0.22942,-0.003 -0.29611,-0.0983 -0.29611,-0.42581 v -0.42272 h -1.32291 z m -0.83096,1.87689 h 6.51226 6.51278 v 4.01164 4.01164 l -6.45128,0.0382 c -3.54799,0.021 -6.4784,0.0116 -6.51227,-0.0207 -0.0339,-0.0323 -0.0615,-1.85423 -0.0615,-4.04936 z" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Warstwa 2"
+     transform="translate(-120.78798,-157.37127)" />
+</svg>
