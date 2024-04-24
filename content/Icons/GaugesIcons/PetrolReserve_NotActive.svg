@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="7.5670662mm"
+   height="8.4815826mm"
+   viewBox="0 0 7.5670662 8.4815826"
+   version="1.1"
+   id="svg1982"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="PetrolReserve_NotActive.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1984"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="12.956566"
+     inkscape:cx="15.281827"
+     inkscape:cy="26.627426"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1979" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-79.336866,-82.996834)">
+    <path
+       id="rect1354"
+       style="fill:#999999;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.568165;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:981.946;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 81.178406,82.996834 a 0.47985364,0.5232645 0 0 0 -0.47986,0.52326 v 7.43507 a 0.47985364,0.5232645 0 0 0 0.47986,0.52325 h 2.29149 1.33178 a 0.47985364,0.5232645 0 0 0 0.47984,-0.52325 v -7.43507 a 0.47985364,0.5232645 0 0 0 -0.47984,-0.52326 h -1.33178 -0.95971 z m 0.12277,0.85644 h 1.68886 1.68933 v 1.99903 h -1.68933 -1.68886 z" />
+    <g
+       id="g1467"
+       transform="matrix(0.93722323,0,0,0.54270451,-38.021749,20.963745)"
+       style="fill:#999999;fill-opacity:1">
+      <rect
+         style="fill:#999999;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.600001;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:981.946;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect1464"
+         width="8.0573416"
+         height="1.0974158"
+         x="125.21949"
+         y="128.83456"
+         rx="51.150425"
+         ry="2.083534e-14" />
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#999999;stroke-width:0.436;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:981.946;stroke-opacity:1;paint-order:stroke fill markers;stroke-dasharray:none"
+       d="m 84.134967,86.247374 c 1.75818,-0.0174 1.75818,0.0174 1.75818,0.0174 v 3.119139 h 0.747425 l -0.03513,-3.931159 -0.943534,-0.804191"
+       id="path1525"
+       sodipodi:nodetypes="cccccc" />
+  </g>
+</svg>
