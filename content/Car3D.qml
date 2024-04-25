@@ -10,6 +10,7 @@ Item {
     property bool switchDoorRight: false
     property bool switchDoorLeft: false
     property bool switchDoorTrunk: false
+    property string color: "grey"
 
     View3D {
         id: view3D
@@ -29,7 +30,7 @@ Item {
                 id: directionalLight
                 x: -375.318
                 y: 904.977
-                brightness: 2.5
+                brightness: 1.5
                 eulerRotation.z: 8.13115
                 eulerRotation.y: -22.71501
                 eulerRotation.x: -42.28757
@@ -48,13 +49,109 @@ Item {
 
             Supra {
                 id: car3Dmodel
-                x: 6.016
-                y: -68.912
+                x: 2.737
+                y: -83.891
                 eulerRotation.z: -0.00001
                 eulerRotation.y: 320
                 eulerRotation.x: -0
-                z: -47.93786
+                z: -56.1745
                 scale: Qt.vector3d(80, 80, 80)
+
+                Node{
+                    id:carLights
+                    visible: false
+
+                    PointLight {
+                        x: 0.716
+                        y: 0.709
+                        constantFade: 0
+                        quadraticFade: 10
+                        z: 2.02961
+                        brightness: 1
+                        eulerRotation.z: 105.31049
+                        eulerRotation.y: -2.15682
+                        eulerRotation.x: 0.59078
+                    }
+
+                    SpotLight {
+                        x: 0.638
+                        y: 0.871
+                        quadraticFade: 1.02866
+                        coneAngle: 48
+                        innerConeAngle: 48
+                        eulerRotation.z: -0.00002
+                        eulerRotation.y: -157.59087
+                        eulerRotation.x: -8.89387
+                        z: 1.83804
+                        brightness: 100
+                    }
+
+                    PointLight {
+                        x: -0.646
+                        y: 0.693
+                        constantFade: 0
+                        quadraticFade: 10
+                        z: 2.04238
+                        brightness: 1
+                        eulerRotation.z: 105.31049
+                        eulerRotation.y: -2.15682
+                        eulerRotation.x: 0.59078
+                    }
+
+                    SpotLight {
+                        x: -0.65
+                        y: 0.971
+                        quadraticFade: 1.02866
+                        coneAngle: 48
+                        innerConeAngle: 48
+                        eulerRotation.z: 4.28555
+                        eulerRotation.y: 173.505
+                        eulerRotation.x: -7.80056
+                        z: 1.67627
+                        brightness: 100
+                    }
+
+                    PointLight {
+                        x: 0.673
+                        y: 0.825
+                        constantFade: 0
+                        quadraticFade: 10
+                        z: -2.20611
+                        brightness: 0.3
+                        eulerRotation.z: 105.31049
+                        eulerRotation.y: -2.15682
+                        eulerRotation.x: 0.59078
+                        color:"red"
+                    }
+
+                    PointLight {
+                        x: -0.694
+                        y: 0.806
+                        constantFade: 0
+                        quadraticFade: 10
+                        z: -2.17461
+                        brightness: 0.3
+                        eulerRotation.z: 105.31049
+                        eulerRotation.y: -2.15682
+                        eulerRotation.x: 0.59078
+                        color:"red"
+                    }
+                }
+
+                PointLight {
+                    id:insideLight1
+                    visible: false
+                    x: -0
+                    y: 1.056
+                    constantFade: 0
+                    quadraticFade: 10
+                    z: -0.42772
+                    brightness: 1
+                    eulerRotation.z: 105.31049
+                    eulerRotation.y: -2.15682
+                    eulerRotation.x: 0.59078
+                }
+
             }
         }
 
@@ -126,6 +223,24 @@ Item {
         }
 
         NumberAnimation {
+            id: dayAnim
+            target: directionalLight
+            property: "brightness"   //look in folder asset_imports/Quick3DAssets/Supra/Supra.qml
+            from: 0.2
+            to: 1.5
+            duration: 1000
+        }
+
+        NumberAnimation {
+            id: nightAnim
+            target: directionalLight
+            property: "brightness"   //look in folder asset_imports/Quick3DAssets/Supra/Supra.qml
+            from: 1.5
+            to: 0.2
+            duration: 1000
+        }
+
+        NumberAnimation {
             id: trunkAnim
             target: car3Dmodel
             property: "trunkAngle"   //look in folder asset_imports/Quick3DAssets/Supra/Supra.qml
@@ -151,11 +266,11 @@ Item {
             to: 50
             duration: 600
         }
-    }
+    }   
 
     NumberAnimation {
         id:linesAnimation
-        target:lanelines;
+        target:lanelines
         property: "positionV"
         from: 0
         to: 1
@@ -187,13 +302,18 @@ Item {
                     leftDoorAnim.from = -50
                     leftDoorAnim.to = 0
                     switchDoorLeft = true
+                    insideLight1.visible = true
                     leftdoor.color = "darkgreen"
 
                 } else if (switchDoorLeft == true) {
                     leftDoorAnim.from = 0
                     leftDoorAnim.to = -50
                     switchDoorLeft = false
-                    leftdoor.color = "black"
+                    leftdoor.color = "#d2d2d2"
+                    // insideLight1.visible = false
+                    if(switchDoorRight == false && switchDoorTrunk == false) {
+                        insideLight1.visible = false
+                    }
                     if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
                         car3DClass.state = "Home"
                     }
@@ -214,7 +334,8 @@ Item {
             source: "images/leftdoor.png"
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
-        }      
+            color: "#d2d2d2"
+        }
     }
 
     RoundButton {
@@ -242,7 +363,11 @@ Item {
                     trunkAnim.from = 0
                     trunkAnim.to = 30
                     switchDoorTrunk = false
-                    trunk.color = "black"
+                    trunk.color = "#bbbbbb"
+                    // insideLight1.visible = false
+                    if(switchDoorRight == false && switchDoorLeft == false) {
+                        insideLight1.visible = false
+                    }
                     if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
                         car3DClass.state = "Home"
                     }
@@ -252,6 +377,7 @@ Item {
                     trunkAnim.to = 0
                     switchDoorTrunk = true
                     trunk.color = "darkgreen"
+                    insideLight1.visible = true
                 }
             }
         }
@@ -271,6 +397,7 @@ Item {
             anchors.horizontalCenterOffset: 6
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
+            color: "#bbbbbb"
         }       
     }
 
@@ -281,7 +408,7 @@ Item {
         width: 69
         height: 57
 
-        MouseArea {
+        MouseArea {            
             anchors.fill: parent
             hoverEnabled: true
 
@@ -298,7 +425,11 @@ Item {
                     rightDoorAnim.from = 0
                     rightDoorAnim.to = 50
                     switchDoorRight = false
-                    rightdoor.color = "black"
+                    rightdoor.color = "#d2d2d2"
+                    // insideLight1.visible = false
+                    if(switchDoorLeft == false && switchDoorTrunk == false) {
+                        insideLight1.visible = false
+                    }
                     if(switchDoorRight == false && switchDoorTrunk == false && switchDoorLeft == false) {
                         car3DClass.state = "Home"
                     }
@@ -308,9 +439,11 @@ Item {
                     rightDoorAnim.to = 0
                     switchDoorRight = true
                     rightdoor.color = "darkgreen"
+                    insideLight1.visible = true
                 }
             }
         }
+
 
 
         background: Rectangle {
@@ -326,6 +459,25 @@ Item {
             source: "images/rightdoor.png"
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
+            color: "#d2d2d2"
+        }
+    }
+
+    Button {
+        id:buttonDay
+        x: 131
+        y: 0
+        onClicked: {
+            dayAnim.running = true            
+        }
+    }
+
+    Button {
+        id:buttonNight
+        x: 200
+        y: 0
+        onClicked: {
+            nightAnim.running = true
         }
     }
 
@@ -358,24 +510,38 @@ Item {
         checked: switchDoorTrunk
     }
 
+    Switch {
+        enabled: false
+        id: switchdaynight
+        checked: if(daynightswitch) {
+                     buttonNight.clicked()
+                     carLights.visible = true
+                     true
+                 } else {
+                     buttonDay.clicked()
+                     carLights.visible = false                   
+                     false
+                 }
+    }
+
     RoundButton{
         id:switchDrive
         x: 422
         y: 113
         width: 69
         height: 57
-
+        enabled: false
         MouseArea {
             anchors.fill: parent
             hoverEnabled: true
 
-            onEntered: {
-                drive.scale = 1.1
-            }
+            // onEntered: {
+            //     drive.scale = 1.1
+            // }
 
-            onExited: {
-                drive.scale = 1
-            }
+            // onExited: {
+            //     drive.scale = 1
+            // }
 
             onClicked: {
                 car3DClass.state = "Straight"
@@ -391,6 +557,7 @@ Item {
             source: "images/steering-wheel.png"
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
+            color: "#e1e1e1"
         }
 
         background: Rectangle {
@@ -419,14 +586,12 @@ Item {
 
     }
 
-    Item {
-        anchors.fill: parent
-        focus: true
-        // Keys.onLeftPressed: console.log("move left")
-        Keys.onUpPressed: car3DClass.state = "Straight"
-        Keys.onRightPressed: car3DClass.state = "Right"
-        Keys.onLeftPressed: car3DClass.state = "Left"
-    }
+
+
+    // Item {
+    //     focus: true
+    //     Keys.onPressed: (event)=> { if (event.key == Qt.Key_Enter) state = 'Straight'; }
+    // }
 
     states: [
 
@@ -654,6 +819,19 @@ Item {
                 target: drive
                 color: "darkgreen"
             }
+        },
+
+        State {
+            name: "Night"
+            PropertyChanges {
+                target: directionalLight
+                brightness: 0.5
+            }
+
+            PropertyChanges {
+                target: drive
+                color: "darkgreen"
+            }
         }
     ]
 
@@ -661,7 +839,7 @@ Item {
 
         Transition {            
             NumberAnimation {
-                properties: "eulerRotation.y, x, y, z,  eulerRotation.z, eulerRotation.x, opacity"
+                properties: "eulerRotation.y, x, y, z,  eulerRotation.z, eulerRotation.x, opacity, brightness"
                 duration: 1000
             }
         }

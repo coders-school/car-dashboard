@@ -2,6 +2,7 @@
 ### Do not change
 
 
+
 qt_add_library(content STATIC)
 qt6_add_qml_module(content
     URI "content"
@@ -16,7 +17,11 @@ qt6_add_qml_module(content
         MusicPlayer.qml
         Navigation.qml
         PhoneList.qml
-        3DCarTest.qml
     RESOURCES
         images/lanelines.png
+        images/leftdoor.png
+        images/rightdoor.png
+        images/steering-wheel.png
+        images/trunk.png
+
 )
