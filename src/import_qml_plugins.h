@@ -7,3 +7,5 @@
 
 Q_IMPORT_QML_PLUGIN(contentPlugin)
 Q_IMPORT_QML_PLUGIN(CarDashboardPlugin)
+Q_IMPORT_QML_PLUGIN(Quick3DAssets_SupraPlugin)
+
