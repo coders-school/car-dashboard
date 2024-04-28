@@ -23,12 +23,16 @@ Item {
         id: tempControlDial
         x: main.width / 2 - width / 2 - 250
         y: main.height / 2 - height / 2
-        value: 25
+        value: airConditionController.aSetTemp
         to: 32
         from: 18
         wheelEnabled: false
         snapMode: Dial.SnapAlways
         stepSize: 0.5
+
+        onMoved: {
+            airConditionController.aSetTemp = this.value;
+        }
     }
 
     Text {
@@ -53,11 +57,15 @@ Item {
         id: fanControlDial
         x: main.width / 2 - width / 2 + 250
         y: main.height / 2 - height / 2
-        value: 0
+        value: airConditionController.aSetFan
         to: 100
         wheelEnabled: false
         stepSize: 20
         snapMode: Dial.SnapAlways
+        
+        onMoved: {
+            airConditionController.aSetFan = this.value;
+        }
     }
 
     Text {
@@ -81,28 +89,30 @@ Item {
                 width: buttonWidth
                 height: buttonHeight
                 highlighted: false
-                checkable: true
                 text: "A/C"
+                checked: airConditionController.enableAC
+                onClicked: airConditionController.enableAC = !airConditionController.enableAC;
             }
 
             Button {
                 id: heatingRearButton
                 width: buttonWidth
                 height: buttonHeight
-                checkable: true
                 text: qsTr("Rear")
+                checked: airConditionController.heatingRear
+                onClicked: airConditionController.heatingRear = !airConditionController.heatingRear;
             }
 
             Button {
                 id: circulationButton
                 width: buttonWidth
                 height: buttonHeight
-                checkable: true
                 text: qsTr("Circulation")
+                checked: airConditionController.circulation
+                onClicked: airConditionController.circulation = !airConditionController.circulation;
             }
 
         }
-
 
         Column {
             spacing: 20
@@ -111,8 +121,9 @@ Item {
                 id: heatingFrontButton
                 width: buttonWidth
                 height: buttonHeight
-                checkable: true
                 text: qsTr("Front")
+                checked: airConditionController.heatingFront
+                onClicked: airConditionController.heatingFront = !airConditionController.heatingFront;
             }
 
             Button {
@@ -120,7 +131,8 @@ Item {
                 width: buttonWidth
                 height: buttonHeight
                 text: qsTr("Face")
-                checkable: true
+                checked: airConditionController.faceAirflow
+                onClicked: airConditionController.faceAirflow = !airConditionController.faceAirflow;
             }
 
             Button {
@@ -128,7 +140,8 @@ Item {
                 width: buttonWidth
                 height: buttonHeight
                 text: qsTr("Feet")
-                checkable: true
+                checked: airConditionController.feetAirflow
+                onClicked: airConditionController.feetAirflow = !airConditionController.feetAirflow;
             }
 
         }
@@ -138,7 +151,7 @@ Item {
         id: currentTemperatureText
         x: 688
         y: 50
-        text: qsTr("20ºC")
+        text: (airConditionController.currentTemp).toFixed(1) + qsTr("ºC")
         font.pixelSize: 32
     }
 
