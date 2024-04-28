@@ -20,5 +20,4 @@ qt6_add_qml_module(content
         Car3D.qml
         ContactModel.qml
         PhoneListToolBar.qml
-
 )
