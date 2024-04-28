@@ -101,7 +101,7 @@ QtObject {
         running: !values.booting
         repeat: true
         onTriggered: JS.kmhTimer()
-        interval: 50
+        interval: 35
     }
     property Timer icons: Timer{
         running: !values.booting

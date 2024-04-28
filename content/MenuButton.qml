@@ -16,6 +16,7 @@ Column {
         text: "3DCar"
         onClicked: {
             actualWindow = 0
+            carTurn.focus = true
         }
     }
 
@@ -25,6 +26,7 @@ Column {
         text: "A/C"
         onClicked: {
             actualWindow = 1
+            carTurn.focus = true
         }
     }
 
@@ -34,6 +36,7 @@ Column {
         text: "PhoneCalling"
         onClicked: {
             actualWindow = 2
+            carTurn.focus = true
         }
     }
 
@@ -43,6 +46,7 @@ Column {
         text: "MusicPlayer"
         onClicked: {
             actualWindow = 3
+            carTurn.focus = true
         }
     }
 
@@ -52,6 +56,7 @@ Column {
         text: "Navigation"
         onClicked: {
             actualWindow = 4
+            carTurn.focus = true
         }
     }
 }
