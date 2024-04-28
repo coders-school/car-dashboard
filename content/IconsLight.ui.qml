@@ -38,8 +38,8 @@ RowLayout {
             Image {
                 Layout.alignment: parent
                 source: modelData.activePath
-                width: 50
-                height: 50
+                width: 40
+                height: 40
                 visible: modelData.isActive
             }
 
@@ -47,8 +47,8 @@ RowLayout {
             Image {
                 Layout.alignment: parent
                 source: modelData.inactivePath
-                width: 50
-                height: 50
+                width: 40
+                height: 40
                 visible: !modelData.isActive
 
             }
