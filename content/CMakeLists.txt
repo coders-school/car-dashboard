@@ -8,16 +8,20 @@ qt6_add_qml_module(content
     URI "content"
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
-    QML_FILES
-        MusicPlayer.qml
-        PhoneList.qml
-        MainScreeen.ui.qml
-        MenuButton.qml
-        App.qml
+    QML_FILES    
+        Gauges.qml    
+        MainScreeen.ui.qml                
         AirCondition.qml
-        Gauges.qml
+        App.qml
+        MenuButton.qml        
+        MusicPlayer.qml
         Navigation.qml
-        Car3D.qml
-        ContactModel.qml
-        PhoneListToolBar.qml
+        PhoneList.qml
+    RESOURCES
+        images/lanelines.png
+        images/leftdoor.png
+        images/rightdoor.png
+        images/steering-wheel.png
+        images/trunk.png
+
 )
