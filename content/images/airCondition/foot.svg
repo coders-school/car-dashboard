@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="164.32776"
+   height="180.67188"
+   viewBox="0 0 43.478385 47.802767"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-224.97673,48.725246)">
+    <g
+       id="g63">
+      <path
+         id="path59"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 261.26181,-36.0204 a 5.2916665,5.2916665 0 0 0 -4.89221,3.304191 l -0.0109,-0.0036 -0.063,0.201538 a 5.2916665,5.2916665 0 0 0 -0.15296,0.490909 l -4.23281,13.567131 -9.02116,-0.991671 a 5.2916665,5.2916665 0 0 0 -1.13378,-0.12454 5.2916665,5.2916665 0 0 0 -4.57285,2.652034 l -0.008,-0.0093 -5.56038,10.219528 0.008,0.006 a 3.9510775,3.9510775 0 0 0 -0.46251,1.83452 3.9510775,3.9510775 0 0 0 3.95118,3.95118 3.9510775,3.9510775 0 0 0 2.8913,-1.26866 l 0.006,0.004 0.0475,-0.0574 a 3.9510775,3.9510775 0 0 0 0.10852,-0.13126 l 5.58674,-6.74687 11.62203,1.39836 -0.002,-0.0109 a 5.6877737,5.6877737 0 0 0 0.61185,0.0439 5.6877737,5.6877737 0 0 0 5.46168,-4.10569 l 10e-4,5.1e-4 4.87619,-17.391181 a 5.2916665,5.2916665 0 0 0 0.0346,-0.12454 l 0.0568,-0.202055 -0.0119,-0.0036 a 5.2916665,5.2916665 0 0 0 0.15348,-1.210779 5.2916665,5.2916665 0 0 0 -5.29167,-5.291667 z" />
+      <circle
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.407398;stroke-linejoin:bevel"
+         id="circle59"
+         cx="263.16345"
+         cy="-43.433582"
+         r="5.2916665" />
+      <path
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.389001;stroke-linejoin:bevel"
+         id="path61"
+         d="m 20.163111,21.593487 -11.0754922,6.394438 0,-12.788876 z"
+         transform="rotate(90,141.13981,111.82485)" />
+      <rect
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.368836;stroke-linejoin:bevel"
+         id="rect61"
+         width="12.575501"
+         height="6.4167109"
+         x="-32.80283"
+         y="-234.57953"
+         transform="rotate(90)" />
+    </g>
+  </g>
+</svg>
