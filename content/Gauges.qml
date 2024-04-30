@@ -31,40 +31,41 @@ Item {
 
             SpeedGauge {
                 id: speedGauge
-                x: 426
-                y: 10
+                x: 427
+                y: 6
+                enabled: false
                 width: 500
                 height: 500
                 kmh_gauge: Data.Values.kmh_gaugeINT
                 kmh_string: Data.Values.kmh_gaugeString
-                scale: 0.8
+                scale: 0.75
             }
             FuelLevel {
                 id: fuelLevel
-                x: 483
-                y: 371
-                scale: 0.7
+                x: 479
+                y: 356
+                scale: 0.6
                 fuelLevel: Data.Values.fuelLevelInt
             }
             RPMGauge {
                 id: rpmGauge
-                x: -41
-                y: 30
+                x: -31
+                y: 17
                 rpmFrame: Data.Values.rpm_gaugeINT
                 scale: 0.65
             }
             EngineTemp {
                 id: engineTemp
-                x: 22
-                y: 362
+                x: 32
+                y: 349
                 scale: 0.55
                 currentEngineTemperature: Data.Values.currentEngineTemperatureInt
             }
             IconsLight {
                 id: iconsLight
-                x: 340
-                y: 72
-                width: 150
+                x: 365
+                y: 113
+                width: 144
                 height: 40
                 highBeam_active: Data.Values.highBeam_active
                 left_active: Data.Values.left_active
@@ -73,7 +74,7 @@ Item {
             IconsMain {
                 id: iconsMain
                 scale: 0.6
-                x: 15
+                x: 31
                 y: 456
                 parkingBrake_active: Data.Values.parkingBrake_active
                 esp_active: Data.Values.esp_active
@@ -90,7 +91,7 @@ Item {
             }
             Text {
                 id: totalMilage
-                x: 340
+                x: 353
                 y: 435
                 width: 156
                 height: 25
@@ -102,8 +103,8 @@ Item {
             }
             Text {
                 id: tripMilage
-                x: 181
-                y: 256
+                x: 191
+                y: 243
                 width: 74
                 height: 32
                 color: "#ffffff"
@@ -114,8 +115,8 @@ Item {
             }
             Text {
                 id: timeNow
-                x: 181
-                y: 278
+                x: 191
+                y: 265
                 width: 93
                 height: 36
                 color: "#ffffff"
