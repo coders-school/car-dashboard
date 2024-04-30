@@ -1,6 +1,5 @@
 // Copyright (C) 2021 The Qt Company Ltd.
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0
-
 import QtQuick 6.4
 import QtQuick.Controls
 import CarDashboard
@@ -11,23 +10,16 @@ Window {
     id:window
     width: Constants.width
     height: Constants.height
+    visible: true
+    title: "CarDashboard"
 
     property bool daynightswitch: false
 
 
 
-    visible: true
-    color: "#545252"
-    title: "CarDashboard"
-
-
     Item {
         id: startWindow
         anchors.fill: parent
-        anchors.leftMargin: 0
-        anchors.rightMargin: 0
-        anchors.topMargin: 0
-        anchors.bottomMargin: 0
 
         Rectangle{
             anchors.fill:parent
@@ -85,12 +77,25 @@ Window {
         }
 
         Rectangle {
+            id:menuColor
+            x:menuButton.x
+            y:menuButton.y
+            height: menuButton.height
+            width: menuButton.width
+            z:1
+            gradient: Gradient {
+                GradientStop { position:0.3; color: "transparent"}
+                GradientStop { position: 1.1; color: "#004fc9" }
+            }
+        }
+
+        Rectangle {
             id: backday
             anchors.fill: parent
             opacity: 1
 
             gradient: Gradient {
-                GradientStop { position: 0.5; color: "#5f5f5f" }
+                GradientStop { position: 0.5; color: "#808080" }
                 GradientStop { position: 1.1; color: "black" }
             }
         }
@@ -109,8 +114,8 @@ Window {
 
         Button {
             id: wheatherButton
-            x: 41
-            y: 41
+            x: 17
+            y: 17
             width: 66
             height: 54
 
@@ -128,6 +133,7 @@ Window {
                     moon.visible = false
                     stateGroup.state = "Day"
                     daynightswitch = false
+                    carTurn.focus = true
                     mainWindow.enabled = true
                     startWindow.enabled = false
                 }
@@ -163,6 +169,7 @@ Window {
         MenuButton {
             id: menuButton
             height: parent.height
+            z:2
         }
 
         Gauges {
@@ -254,6 +261,11 @@ Window {
 
                     }
 
+                    PropertyChanges {
+                        target: menuColor
+                        opacity: 1
+                    }
+
                 },
 
                 State {
@@ -273,7 +285,6 @@ Window {
                     PropertyChanges {
                         target: carTurn
                         focus: false
-
                     }
 
                     PropertyChanges {
@@ -286,6 +297,11 @@ Window {
                         opacity: 1
 
                     }
+
+                    PropertyChanges {
+                        target: menuColor
+                        opacity: 1
+                    }
                 }
 
             ]
@@ -295,7 +311,7 @@ Window {
                 Transition {
                     NumberAnimation {
                         properties: "opacity"
-                        duration: 1500
+                        duration: 1000
                     }
                 }
             ]
