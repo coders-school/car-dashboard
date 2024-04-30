@@ -52,8 +52,7 @@ Window {
             height: 104
 
             onClicked: {
-                wheatherButton.clicked()
-                menuButton.car3dButton.clicked()
+                wheatherButton.clicked()                
             }
 
             ColorImage {
@@ -201,28 +200,23 @@ Window {
             currentIndex: menuButton.actualWindow
 
             Car3D {
-                id: car3D
-                anchors.fill: parent
+                id: car3D                
             }
 
             AirCondition {
-                id: ac
-                anchors.fill: parent
+                id: ac                
             }
 
             PhoneList {
-                id: phonList
-                anchors.fill: parent
+                id: phonList                
             }
 
             MusicPlayer {
-                id: musicPlayer
-                anchors.fill: parent
+                id: musicPlayer                
             }
 
             Navigation {
-                id: navigation
-                anchors.fill: parent
+                id: navigation                
             }
         }
 
