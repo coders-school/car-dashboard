@@ -83,12 +83,12 @@ QtObject {
 
     /* State change bool */
     property bool booting: true
-    readonly property real bootDuration: 5000
+    // readonly property real bootDuration: 10000
 
     property Timer bootTimer: Timer{
-        running: true
+        running: !values.booting
         repeat: false
-        onTriggered: values.booting = false
+        onTriggered: values.booting
         interval: bootDuration
     }
     property Timer rpmTimer: Timer{
@@ -97,7 +97,7 @@ QtObject {
         onTriggered: JS.rpmTimer()
         interval: 5
     }
-    property Timer kmhTimer: Timer{
+    property Timer kmhTimer: Timer{        
         running: !values.booting
         repeat: true
         onTriggered: JS.kmhTimer()
