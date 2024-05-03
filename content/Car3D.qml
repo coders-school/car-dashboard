@@ -4,6 +4,7 @@ import QtQuick3D 6.4
 import Quick3DAssets.Supra
 import Quick3DAssets.Road_Bend
 import QtQuick.Timeline 1.0
+import Data 1.0 as Data
 
 Item {    
     id: car3DClass
@@ -11,6 +12,7 @@ Item {
     property bool switchDoorLeft: false
     property bool switchDoorTrunk: false
     property string color: "grey"
+    property bool buttonSwitch: true
 
     View3D {
         id: view3D
@@ -278,6 +280,10 @@ Item {
         loops: -1
     }
 
+    Item{
+        id:buttonsSWITCH
+        enabled: buttonSwitch
+
     RoundButton {
         id:switchLefttdoor
         x: 86
@@ -446,6 +452,7 @@ Item {
             color: "#d2d2d2"
         }
     }
+    }
 
     Button {
         id:buttonDay
@@ -513,6 +520,7 @@ Item {
                      false
                  }
     }
+
 
     RoundButton{
         id:switchDrive

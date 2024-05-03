@@ -16,10 +16,10 @@ Window {
     property bool daynightswitch: false
 
 
-
     Item {
         id: startWindow
         anchors.fill: parent
+        visible: true
 
         Rectangle{
             anchors.fill:parent
@@ -59,15 +59,34 @@ Window {
         }
     }
 
+
     Item {
         id: mainWindow
         anchors.fill: parent
         enabled: false
-        opacity: 0
+        opacity: 1
+
+        Switch {
+            enabled: false
+            visible: false
+            z:2
+            id: carMoving1
+            checked: if(Data.Values.carMoving) {
+                        carTurn.enabled = true
+                        car3D.state = "Straight"
+                        car3D.buttonSwitch = false
+                        carTurn.focus = true
+                     } else {
+                        carTurn.enabled = false
+                        car3D.state = "Home"
+                        car3D.buttonSwitch = true
+                        carTurn.focus = true
+                     }
+        }
 
         Item {
             id: carTurn
-            enabled: true
+            enabled: false
             anchors.fill: parent
             focus:true
 
@@ -81,11 +100,12 @@ Window {
             x:menuButton.x
             y:menuButton.y
             height: menuButton.height
-            width: menuButton.width
+            width: menuButton.width            
             z:1
             gradient: Gradient {
-                GradientStop { position:0.3; color: "transparent"}
-                GradientStop { position: 1.1; color: "#004fc9" }
+                GradientStop { position:0.1; color: "transparent"}
+                GradientStop { position: 0.5; color: "#0b60e4" }
+                GradientStop { position: 0.9; color: "transparent" }
             }
         }
 
@@ -95,8 +115,8 @@ Window {
             opacity: 1
 
             gradient: Gradient {
-                GradientStop { position: 0.5; color: "#808080" }
-                GradientStop { position: 1.1; color: "black" }
+                GradientStop { position: 0.4; color: "#808080" }
+                GradientStop { position: 1.0; color: "black" }
             }
         }
 
@@ -106,11 +126,10 @@ Window {
             opacity: 0
 
             gradient: Gradient {
-                GradientStop { position: 2; color: "grey" }
+                GradientStop { position: 1.7; color: "grey" }
                 GradientStop { position: 0.5; color: "black" }
             }
         }
-
 
         Button {
             id: wheatherButton
@@ -127,7 +146,7 @@ Window {
                     daynightswitch = true
                     carTurn.focus = true
                     mainWindow.enabled = true
-                    startWindow.enabled = false
+                    startWindow.enabled = false                    
                 } else {
                     sun.visible = true
                     moon.visible = false
@@ -163,6 +182,40 @@ Window {
                 source: "images/moon.png"
                 fillMode: Image.PreserveAspectFit
                 color: "#cfcfcf"
+            }
+        }
+
+        RoundButton {
+            id:testButton
+            x: 22
+            y: 476
+            width: 58
+            height: 58
+            // text: "test"
+            onClicked: {
+                if(Data.Values.booting == false) {
+                    Data.Values.booting = true
+                    test.color = "red"
+                } else {
+                    Data.Values.booting = false
+                    test.color = "green"
+                }
+            }
+
+
+            ColorImage {
+                id: test
+                x: 0
+                y: 0
+                width: 55
+                height: 55
+                source: "images/test.png"
+                fillMode: Image.PreserveAspectFit
+                color: "red"
+            }
+
+            background: Rectangle {
+                color: "transparent"
             }
         }
 
@@ -263,7 +316,7 @@ Window {
 
                     PropertyChanges {
                         target: menuColor
-                        opacity: 1
+                        opacity: 0.8
                     }
 
                 },
@@ -300,7 +353,7 @@ Window {
 
                     PropertyChanges {
                         target: menuColor
-                        opacity: 1
+                        opacity: 0.8
                     }
                 }
 
@@ -317,7 +370,4 @@ Window {
             ]
         }
     }
-
-
-
 }
