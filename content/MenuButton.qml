@@ -64,7 +64,7 @@ Column {
             y: -9
             width: 104
             height: 70
-            source: "images/air-conditioner.png"
+            source: "images/air-conditioner1.png"
             fillMode: Image.PreserveAspectFit
             color: "#cfcfcf"
         }
