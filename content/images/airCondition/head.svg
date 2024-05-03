@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="147.48436"
+   height="180.67073"
+   viewBox="0 0 39.021903 47.802464"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-14.355713,-9.9654321)">
+    <g
+       id="g62"
+       transform="translate(2.6977437,0.38195854)">
+      <path
+         id="path54"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 43.486574,22.288323 a 5.2916665,5.2916665 0 0 0 -4.892208,3.304191 l -0.01085,-0.0036 -0.06305,0.201538 a 5.2916665,5.2916665 0 0 0 -0.152959,0.490909 L 34.13469,39.848492 25.113536,38.856821 a 5.2916665,5.2916665 0 0 0 -1.133781,-0.12454 5.2916665,5.2916665 0 0 0 -4.572848,2.652034 l -0.0083,-0.0093 -5.560384,10.219531 0.0078,0.0057 a 3.9510775,3.9510775 0 0 0 -0.462505,1.834513 3.9510775,3.9510775 0 0 0 3.95118,3.95118 3.9510775,3.9510775 0 0 0 2.891297,-1.268656 l 0.0057,0.0041 0.04754,-0.05736 a 3.9510775,3.9510775 0 0 0 0.10852,-0.131258 l 5.586739,-6.746875 11.62203,1.398364 -0.0021,-0.01085 a 5.6877737,5.6877737 0 0 0 0.611849,0.04393 5.6877737,5.6877737 0 0 0 5.461682,-4.105692 l 10e-4,5.16e-4 4.876188,-17.391186 a 5.2916665,5.2916665 0 0 0 0.03462,-0.12454 l 0.05684,-0.202055 -0.01188,-0.0036 a 5.2916665,5.2916665 0 0 0 0.153479,-1.210779 5.2916665,5.2916665 0 0 0 -5.291667,-5.291667 z" />
+      <circle
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.407398;stroke-linejoin:bevel"
+         id="circle54"
+         cx="45.388206"
+         cy="14.87514"
+         r="5.2916665" />
+      <path
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.389001;stroke-linejoin:bevel"
+         id="path55"
+         d="m 20.163111,21.593487 -11.0754922,6.394438 0,-12.788876 z"
+         transform="translate(16.558487,-2.2253975)" />
+      <rect
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.389001;stroke-linejoin:bevel"
+         id="rect55"
+         width="13.988137"
+         height="6.4167109"
+         x="11.657969"
+         y="16.159735" />
+    </g>
+  </g>
+</svg>
