@@ -89,7 +89,7 @@ QtObject {
         running: !values.booting
         repeat: false
         onTriggered: values.booting
-        interval: bootDuration
+        // interval: bootDuration
     }
     property Timer rpmTimer: Timer{
         running: !values.booting
