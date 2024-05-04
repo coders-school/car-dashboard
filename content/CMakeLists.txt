@@ -9,30 +9,101 @@ qt6_add_qml_module(content
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
-        Car3D.qml
-        Navigation.qml
-        Gauges.qml
-        MainScreeen.ui.qml
         AirCondition.qml
         App.qml
-        MenuButton.qml
-        PhoneListToolBar.qml
-        PhoneList.qml
+        Car3D.qml
         ContactModel.qml
+        EngineTemp.ui.qml
+        FuelLevel.ui.qml
+        Gauges.qml
+        IconsLight.ui.qml
+        IconsMain.ui.qml
+        MainBackground.ui.qml
+        MainScreeen.ui.qml
+        MenuButton.qml
         MusicPlayer.qml
+        Navigation.qml
+        PhoneList.qml
+        PhoneListToolBar.qml
+        RPMGauge.ui.qml
+        SpeedGauge.ui.qml
     RESOURCES
-        images/steering-wheel.png
-        images/rightdoor.png
+        FuelLevel_EngineTemp/linia1.svg
+        FuelLevel_EngineTemp/linia1_orange.svg
+        FuelLevel_EngineTemp/linia2.svg
+        FuelLevel_EngineTemp/linia3.svg
+        FuelLevel_EngineTemp/linia4.svg
+        FuelLevel_EngineTemp/linia5.svg
+        FuelLevel_EngineTemp/linia6.svg
+        FuelLevel_EngineTemp/linia6_red.svg
+        FuelLevel_EngineTemp/liniaPrzerywana.svg
+        FuelLevel_EngineTemp/Main.svg
+        FuelLevel_EngineTemp/otok.svg
+        FuelLevel_EngineTemp/PetrolNormalState.svg
+        FuelLevel_EngineTemp/PetrolReserve.svg
+        Icons/ABS_active.svg
+        Icons/ABS_NotActive.svg
+        Icons/charging_active.svg
+        Icons/charging_NotActive.svg
+        Icons/CheckEngine_active.svg
+        Icons/CheckEngine_NotActive.svg
+        Icons/CruiseControl_active.svg
+        Icons/CruiseControl_cancel.svg
+        Icons/CruiseControl_NotActive.svg
+        Icons/DoorOpen_active.svg
+        Icons/DoorOpen_NotActive.svg
+        Icons/ESP_active.svg
+        Icons/ESP_NotActive.svg
+        Icons/Imobilizer_fault.svg
+        Icons/Imobilizer_NotFault.svg
+        Icons/OilPressure_active.svg
+        Icons/OilPressure_NotActive.svg
+        Icons/ParkingBreak_active.svg
+        Icons/ParkingBreak_NotActive.svg
+        Icons/SeatBelt_active.svg
+        Icons/SeatBelt_NotActive.svg
+        Icons/SterringFault_active.svg
+        Icons/SterringFault_NotActive.svg
+        Icons/GaugesIcons/EngineTemp_active.svg
+        Icons/GaugesIcons/EngineTemp_NotActive.svg
+        Icons/GaugesIcons/PetrolReserve_active.svg
+        Icons/GaugesIcons/PetrolReserve_NotActive.svg
+        Icons/LightIcons/AntiFog_active.svg
+        Icons/LightIcons/AntiFog_NotActive.svg
+        Icons/LightIcons/HighBeam_active.svg
+        Icons/LightIcons/HighBeam_NotActive.svg
+        Icons/LightIcons/Left.svg
+        Icons/LightIcons/Left_NotActive.svg
+        Icons/LightIcons/Right_active.svg
+        Icons/LightIcons/Right_NotActive.svg
+        images/air-conditioner1.png
+        images/call.png
+        images/car.png
+        images/coders_school_logo.png
+        images/compass.png
         images/lanelines.png
-        images/trunk.png
         images/leftdoor.png
-        images/airCondition/head.svg
-        images/airCondition/heatingRear.svg
-        images/airCondition/heatingFront.svg
-        images/airCondition/dialHandle.svg
+        images/logo.png
+        images/moon.png
+        images/play-button.png
+        images/power.png
+        images/rightdoor.png
+        images/steering-wheel.png
+        images/sun1.png
+        images/test.png
+        images/trunk.png
         images/airCondition/dialFanBackground.svg
+        images/airCondition/dialHandle.svg
         images/airCondition/dialTempBackground.svg
-        images/airCondition/internalCirculation.svg
         images/airCondition/foot.svg
+        images/airCondition/head.svg
+        images/airCondition/heatingFront.svg
+        images/airCondition/heatingRear.svg
+        images/airCondition/internalCirculation.svg
+        MainBackground/Background_hello.svg
+        MainBackground/MainBackground.svg
+        RPMGauge/FaceEmpty.svg
+        SpeedGaugePicture/MainBackground.svg
+        SpeedGaugePicture/SmallBackgroundSpedometer.svg
 
 )

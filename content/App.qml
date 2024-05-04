@@ -27,7 +27,7 @@ Window {
             Image {
                 id: coders_school_logo
                 x: 473
-                y: 43
+                y: 27
                 width: 975
                 height: 358
                 source: "images/coders_school_logo.png"
@@ -38,8 +38,8 @@ Window {
         }
 
         RoundButton {
-            x: 941
-            y: 396
+            x: 907
+            y: 399
             width: 106
             height: 104
 

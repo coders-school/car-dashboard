@@ -199,7 +199,7 @@ Item {
         Road_Bend  {
             id: midlleline1
             opacity: 0
-            x: -39.828
+            x: -45.828
             y: -90.865
             eulerRotation.z: 0
             eulerRotation.x: -0.00001
@@ -213,7 +213,7 @@ Item {
         Road_Bend  {
             id: midlleline2
             opacity: 0
-            x: -349.9
+            x: -360.9
             y: -90.865
             eulerRotation.z: 0
             eulerRotation.x: -0.00001
@@ -276,7 +276,7 @@ Item {
         property: "positionV"
         from: 0
         to: 1
-        duration: 1000
+        duration: 700
         loops: -1
     }
 
@@ -332,6 +332,8 @@ Item {
             width: 56
             height: 50
             source: "images/leftdoor.png"
+            anchors.verticalCenterOffset: -20
+            anchors.horizontalCenterOffset: 0
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
             color: "#d2d2d2"
@@ -447,6 +449,8 @@ Item {
             width: 56
             height: 50
             source: "images/rightdoor.png"
+            anchors.verticalCenterOffset: -24
+            anchors.horizontalCenterOffset: 5
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
             color: "#d2d2d2"
