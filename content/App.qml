@@ -64,7 +64,7 @@ Window {
         id: mainWindow
         anchors.fill: parent
         enabled: false
-        opacity: 1
+        opacity: 0
 
         Switch {
             enabled: false
