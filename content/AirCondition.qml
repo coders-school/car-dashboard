@@ -23,9 +23,11 @@ Item {
         id: tempControlDial
         x: main.width / 2 - width / 2 - 250
         y: main.height / 2 - height / 2
+        width: 200
+        height:200
+        to: 24
+        from: 14
         value: airConditionController.aSetTemp
-        to: 32
-        from: 18
         wheelEnabled: false
         snapMode: Dial.SnapAlways
         stepSize: 0.5
@@ -33,14 +35,40 @@ Item {
         onMoved: {
             airConditionController.aSetTemp = this.value;
         }
-    }
 
-    Text {
-        id: tempControlValueText
-        anchors.horizontalCenter: tempControlDial.horizontalCenter
-        anchors.verticalCenter: tempControlDial.verticalCenter
-        text: (tempControlDial.value).toFixed(1) + "ºC"
-        font.pixelSize: 32
+        background: Image {
+            id: dialTempBackground
+            source: "images/airCondition/dialTempBackground.svg"
+            fillMode: Image.PreserveAspectFit
+            anchors.fill: parent
+        }
+
+        handle: Image {
+            id: dialTempHandle
+            x: tempControlDial.background.x + tempControlDial.width / 2 - width / 2
+            y: tempControlDial.background.y + tempControlDial.height / 2 - height / 2
+            source: "images/airCondition/dialHandle.svg"
+            fillMode: Image.PreserveAspectFit
+            width: 16
+            height: 16
+            property int dialRadius: 76
+            transform: [
+                Translate {
+                    property double handleAngle: (tempControlDial.angle - 90) * Math.PI / 180
+                    x: Math.cos(handleAngle) * dialTempHandle.dialRadius;
+                    y: Math.sin(handleAngle) * dialTempHandle.dialRadius;
+                }
+            ]
+        }
+
+        Text {
+            id: tempControlValueText
+            color: "#ffffff"
+            anchors.horizontalCenter: tempControlDial.horizontalCenter
+            anchors.verticalCenter: tempControlDial.verticalCenter
+            text: (tempControlDial.value).toFixed(1) + "ºC"
+            font.pixelSize: 32
+        }
     }
 
     
@@ -58,23 +86,53 @@ Item {
         x: main.width / 2 - width / 2 + 250
         y: main.height / 2 - height / 2
         value: airConditionController.aSetFan
-        to: 100
+        from: 0
+        to: 5
         wheelEnabled: false
-        stepSize: 20
+        stepSize: 1
         snapMode: Dial.SnapAlways
         
         onMoved: {
             airConditionController.aSetFan = this.value;
         }
+        width: 200
+        height:200
+
+        background: Image {
+            id: dialFanBackground
+            source: "images/airCondition/dialFanBackground.svg"
+            fillMode: Image.PreserveAspectFit
+            anchors.fill: parent
+        }
+
+        handle: Image {
+            id: dialFanHandle
+            x: fanControlDial.background.x + fanControlDial.width / 2 - width / 2
+            y: fanControlDial.background.y + fanControlDial.height / 2 - height / 2
+            source: "images/airCondition/dialHandle.svg"
+            fillMode: Image.PreserveAspectFit
+            width: 16
+            height: 16
+            property int dialRadius: 76
+            transform: [
+                Translate {
+                    property double handleAngle: (fanControlDial.angle - 90) * Math.PI / 180
+                    x: Math.cos(handleAngle) * dialFanHandle.dialRadius;
+                    y: Math.sin(handleAngle) * dialFanHandle.dialRadius;
+                }
+            ]
+        }
+
+        Text {
+            id: fanControlValueText
+            color: "#ffffff"
+            text: fanControlDial.value === 0 ? "AUTO" : ((fanControlDial.value).toFixed(0))
+            anchors.horizontalCenter: fanControlDial.horizontalCenter
+            anchors.verticalCenter: fanControlDial.verticalCenter
+            font.pixelSize: text === "AUTO" ? 32 : 64
+        }
     }
 
-    Text {
-        id: fanControlValueText
-        text: fanControlDial.value === 0 ? "AUTO" : ((fanControlDial.value).toFixed(0) + "%")
-        anchors.horizontalCenter: fanControlDial.horizontalCenter
-        anchors.verticalCenter: fanControlDial.verticalCenter
-        font.pixelSize: 32
-    }
 
     Row {
         x: main.width / 2 - width / 2
@@ -90,26 +148,48 @@ Item {
                 height: buttonHeight
                 highlighted: false
                 text: "A/C"
+                font.pixelSize: 32
                 checked: airConditionController.enableAC
                 onClicked: airConditionController.enableAC = !airConditionController.enableAC;
+                contentItem: Text {
+                    text: acEnableButton.text
+                    font: acEnableButton.font
+                    opacity: enabled ? 1.0 : 0.3
+                    color: acEnableButton.checked ? "green" : "black"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    elide: Text.ElideRight
+                }
             }
 
             Button {
                 id: heatingRearButton
                 width: buttonWidth
                 height: buttonHeight
-                text: qsTr("Rear")
                 checked: airConditionController.heatingRear
                 onClicked: airConditionController.heatingRear = !airConditionController.heatingRear;
+
+                display: AbstractButton.IconOnly
+                icon  {
+                    source: "images/airCondition/heatingRear.svg"
+                    color: checked ? "green" : "black"
+                    height: parent.height
+                }
             }
 
             Button {
                 id: circulationButton
                 width: buttonWidth
                 height: buttonHeight
-                text: qsTr("Circulation")
                 checked: airConditionController.circulation
                 onClicked: airConditionController.circulation = !airConditionController.circulation;
+
+                display: AbstractButton.IconOnly
+                icon  {
+                    source: "images/airCondition/internalCirculation.svg"
+                    color: checked ? "green" : "black"
+                    height: parent.height
+                }
             }
 
         }
@@ -121,9 +201,15 @@ Item {
                 id: heatingFrontButton
                 width: buttonWidth
                 height: buttonHeight
-                text: qsTr("Front")
                 checked: airConditionController.heatingFront
                 onClicked: airConditionController.heatingFront = !airConditionController.heatingFront;
+
+                display: AbstractButton.IconOnly
+                icon  {
+                    source: "images/airCondition/heatingFront.svg"
+                    color: checked ? "green" : "black"
+                    height: parent.height
+                }
             }
 
             Button {
@@ -133,6 +219,13 @@ Item {
                 text: qsTr("Face")
                 checked: airConditionController.faceAirflow
                 onClicked: airConditionController.faceAirflow = !airConditionController.faceAirflow;
+                
+                display: AbstractButton.IconOnly
+                icon  {
+                    source: "images/airCondition/head.svg"
+                    color: checked ? "green" : "black"
+                    height: parent.height
+                }
             }
 
             Button {
@@ -142,6 +235,13 @@ Item {
                 text: qsTr("Feet")
                 checked: airConditionController.feetAirflow
                 onClicked: airConditionController.feetAirflow = !airConditionController.feetAirflow;
+                
+                display: AbstractButton.IconOnly
+                icon  {
+                    source: "images/airCondition/foot.svg"
+                    color: checked ? "green" : "black"
+                    height: parent.height
+                }
             }
 
         }

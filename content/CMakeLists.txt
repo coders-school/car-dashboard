@@ -8,20 +8,31 @@ qt6_add_qml_module(content
     URI "content"
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
-    QML_FILES    
-        Gauges.qml    
-        MainScreeen.ui.qml                
+    QML_FILES
+        Car3D.qml
+        Navigation.qml
+        Gauges.qml
+        MainScreeen.ui.qml
         AirCondition.qml
         App.qml
-        MenuButton.qml        
-        MusicPlayer.qml
-        Navigation.qml
+        MenuButton.qml
+        PhoneListToolBar.qml
         PhoneList.qml
+        ContactModel.qml
+        MusicPlayer.qml
     RESOURCES
-        images/lanelines.png
-        images/leftdoor.png
-        images/rightdoor.png
         images/steering-wheel.png
+        images/rightdoor.png
+        images/lanelines.png
         images/trunk.png
+        images/leftdoor.png
+        images/airCondition/head.svg
+        images/airCondition/heatingRear.svg
+        images/airCondition/heatingFront.svg
+        images/airCondition/dialHandle.svg
+        images/airCondition/dialFanBackground.svg
+        images/airCondition/dialTempBackground.svg
+        images/airCondition/internalCirculation.svg
+        images/airCondition/foot.svg
 
 )

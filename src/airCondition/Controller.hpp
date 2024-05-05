@@ -53,10 +53,10 @@ private:
     bool faceAirflow{};
     bool feetAirflow{};
     // DIALS
-    float aSetTemp = 25;
+    float aSetTemp = 19;
     int aSetFan = 0;
     // INFO
-    float currentTemp = 25;
+    float currentTemp = 19;
 };
 
 }  // namespace AirCondition
