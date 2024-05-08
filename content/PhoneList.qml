@@ -6,6 +6,7 @@ import Qt5Compat.GraphicalEffects
 
 Item {
     anchors.leftMargin: 20
+
     PhoneListToolBar {
     }
 

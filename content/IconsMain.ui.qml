@@ -48,7 +48,7 @@ RowLayout {
             y: modelData.y
 
             Image {
-                anchors.centerIn: parent
+                // anchors.centerIn: parent
                 source: modelData.activePath
                 width: 50
                 height: 50
@@ -57,7 +57,7 @@ RowLayout {
 
 
             Image {
-                anchors.centerIn: parent
+                // anchors.centerIn: parent
                 source: modelData.inactivePath
                 width: 50
                 height: 50

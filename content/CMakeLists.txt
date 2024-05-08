@@ -12,6 +12,7 @@ qt6_add_qml_module(content
         AirCondition.qml
         App.qml
         Car3D.qml
+        ContactDelegate.qml
         ContactModel.qml
         EngineTemp.ui.qml
         FuelLevel.ui.qml
@@ -76,22 +77,30 @@ qt6_add_qml_module(content
         Icons/LightIcons/Left_NotActive.svg
         Icons/LightIcons/Right_active.svg
         Icons/LightIcons/Right_NotActive.svg
+        images/add_contact.png
         images/air-conditioner1.png
+        images/avatar.png
         images/call.png
         images/car.png
         images/coders_school_logo.png
         images/compass.png
+        images/delete_contact.png
+        images/face1.png
+        images/face2.png
         images/lanelines.png
         images/leftdoor.png
         images/logo.png
         images/moon.png
         images/play-button.png
         images/power.png
+        images/profile.png
         images/rightdoor.png
         images/steering-wheel.png
         images/sun1.png
+        images/telephone-call.png
         images/test.png
         images/trunk.png
+        images/user.png
         images/airCondition/dialFanBackground.svg
         images/airCondition/dialHandle.svg
         images/airCondition/dialTempBackground.svg

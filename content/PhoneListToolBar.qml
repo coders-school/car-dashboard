@@ -49,7 +49,8 @@ Item {
             opacity: 0.8
             standardButtons: DialogButtonBox.Ok | DialogButtonBox.Cancel
 
-            onRejected: alarmDialog.close()
+
+            onRejected: popup.close()
             onAccepted:
             {
                 phoneView.append({"name" : nameTextField.text, "number" : phoneNumberField.text, "photo" : "images/user.png" })

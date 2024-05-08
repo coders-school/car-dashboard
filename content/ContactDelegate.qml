@@ -6,7 +6,7 @@ import Qt5Compat.GraphicalEffects
 
 ItemDelegate{
     id: root
-    width: parent.width
+    width: 600
     checkable: true
     onClicked:{ contactListView.currentIndex = index}
 
@@ -54,9 +54,9 @@ ItemDelegate{
                         color: "#e6e4e4"
                         font.family: "TimesNewRoman"
                     }
-
                 }
             }
+
             Item {
                 Layout.fillWidth: true
             }
@@ -75,15 +75,13 @@ ItemDelegate{
                 source: "images/delete_contact.png"
                 fillMode: Image.PreserveAspectFit
             }
-
-
         }
 
         Item{
             id:callingButton
 
             RoundButton {
-                id: toolDeleteButton1
+                id: toolcallingButton
                 x: 78
                 y: -66
                 width: 45
@@ -91,7 +89,7 @@ ItemDelegate{
                 visible: root.checked
 
                 Image {
-                    id: delete_contact1
+                    id: phone_calling
                     anchors.fill: parent
                     source: "images/telephone-call.png"
                     fillMode: Image.PreserveAspectFit
@@ -100,8 +98,6 @@ ItemDelegate{
             }
         }
     }
-
-
 }
 
 

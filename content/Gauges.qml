@@ -96,7 +96,7 @@ Item {
                 width: 156
                 height: 25
                 color: "#ffffff"
-                text: qsTr("Total: 145963 mil")
+                text: qsTr("Total: 145963 km")
                 font.pixelSize: 15
                 font.family: "Verdana"
                 font.bold: true
