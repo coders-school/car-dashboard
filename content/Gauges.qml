@@ -57,7 +57,7 @@ Item {
             EngineTemp {
                 id: engineTemp
                 x: 32
-                y: 349
+                y: 359
                 scale: 0.55
                 currentEngineTemperature: Data.Values.currentEngineTemperatureInt
             }
