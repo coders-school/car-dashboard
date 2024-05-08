@@ -260,7 +260,7 @@ Window {
             currentIndex: menuButton.actualWindow
 
             Car3D {
-                id: car3D                
+                id: car3D
             }
 
             AirCondition {
@@ -318,7 +318,6 @@ Window {
                         target: menuColor
                         opacity: 0.8
                     }
-
                 },
 
                 State {

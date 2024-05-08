@@ -1,10 +1,11 @@
+
+
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
 this file manually, you might introduce QML code that is not supported by Qt Design Studio.
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
-
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Studio.Components 1.0
@@ -13,13 +14,12 @@ import QtQuick.Studio.Effects 1.0
 import QtQuick.Timeline 1.0
 import QtQuick.Studio.LogicHelper 1.0
 
-
 Item {
     id: speed
     width: 500
     height: 500
-    property alias kmh_gauge:kphTimeline.currentFrame
-    property alias kmh_string:speedText.text
+    property alias kmh_gauge: kphTimeline.currentFrame
+    property alias kmh_string: speedText.text
 
     Image {
         id: main
@@ -202,15 +202,12 @@ Item {
                 layer.enabled: true
             }
         }
-      }
-
-
+    }
 
     Item {
         id: speed_number
-        x:0
-        y:0
-
+        x: 0
+        y: 0
     }
     Image {
         id: backgroundspedometer
@@ -243,14 +240,12 @@ Item {
         width: 55
         height: 40
         color: "#FFFFFF"
-        text: "Km/h"
+        text: "KM/H"
         font.weight: Font.Light
         font.pixelSize: 20
         rotation: 0
         font.family: "Verdana"
-
     }
-
 
     Timeline {
         id: kphTimeline
@@ -284,6 +279,4 @@ Item {
             }
         }
     }
-
-
 }
