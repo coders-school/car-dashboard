@@ -1,0 +1,1 @@
+sudo docker run -it --rm -i --privileged -v /dev:/dev -e DISPLAY=$DISPLAY  -v /tmp/.X11-unix:/tmp/.X11-unix -v$(pwd):/app qt
