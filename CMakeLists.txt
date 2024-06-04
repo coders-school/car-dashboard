@@ -9,6 +9,7 @@ set(CMAKE_AUTOMOC ON)
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/flags.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/files.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/pre-commit-check.cmake)
 
 find_package(QT NAMES Qt6 COMPONENTS Core Gui Qml Quick)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Qml Quick)
@@ -24,7 +25,7 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/cppcheck.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/clang-tidy.cmake)
 
 
-qt_add_executable(${CMAKE_PROJECT_NAME} 
+qt_add_executable(${CMAKE_PROJECT_NAME}
     ${MAIN_SOURCES}
     ${MAIN_HEADERS}
 )
