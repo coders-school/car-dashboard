@@ -1,4 +1,4 @@
-# Car Dashboard 
+# Car Dashboard
 
 ## Main goal
 Create a modern Car Dashboar using QT framework(QT creator, QT desinger).
@@ -9,7 +9,7 @@ Create a modern Car Dashboar using QT framework(QT creator, QT desinger).
 3. Open QT Design.
 4. Open project by clicking in project direcotry the "CarDashboard.qml" file.
 
-## Example and division of Classes 
+## Example and division of Classes
 
 ![Picture](Picture/CarCockpitTestV1.jpg)
 
@@ -30,7 +30,7 @@ Create a modern Car Dashboar using QT framework(QT creator, QT desinger).
 
 ### Qt
 You can open project with:
-- Qt Design Studio 
+- Qt Design Studio
     - Run Qt Design Studio and open CarDashboard.qmlproject file.
     - User settings are saved in CarDashboard.qmlproject.qtds.
 - Qt Creator
@@ -125,11 +125,20 @@ CMake targets:
 - clang-tidy-check
 - clang-tidy-fix
 
+#### pre-commit
+In the project is added `pre-commit`, which is run before commit.
+If an error occurred, try: `pip install --force-reinstall -U pre-commit`
+
+##### Set up:
+```
+pre-commit install
+```
+
 #### valgrind
 ```
 valgrind --leak-check=full \
          --show-leak-kinds=all \
-         --track-origins=yes \  
+         --track-origins=yes \
          --verbose \
          ./<BUILD DIR>/CarDashboardApp
 ```
@@ -141,16 +150,16 @@ valgrind --leak-check=full \
 - Speed Gauge
 - RPM Gauge
 - Additional: timer, thermometer etc.
-  
+
 ### $${\color{blue}2.Class \space 3D \space Car}$$
 
 - 3D car model that can be moved by mouse
-- Open doors and trunk by using buttons on screen 
+- Open doors and trunk by using buttons on screen
 
 ### $${\color{yellow}3.Class \space A/C \space Sit \space Control}$$
 
 - Change the temperature by using A/C button
-- Change the postion of sit by using sit control button  
+- Change the postion of sit by using sit control button
 
 ### $${\color{green}4.Class \space Phone \space Calling}$$
 
@@ -160,7 +169,7 @@ valgrind --leak-check=full \
 ### $${\color{purple}5.Class \space Music \space Player}$$
 
 - Change music
-- Change beetwen radio and songs 
+- Change beetwen radio and songs
 - Mute, volume etc.
 
 ### $${\color{grey}6.Class \space Navigation}$$
