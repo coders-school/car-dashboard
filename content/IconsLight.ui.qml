@@ -31,24 +31,24 @@ RowLayout {
         delegate: RowLayout {
             width: 100
             height: 100
-            x: modelData.x
-            y: modelData.y
+            // x: modelData.x
+            // y: modelData.y
 
             // For active images
             Image {
-                Layout.alignment: parent
+                // Layout.alignment: parent
                 source: modelData.activePath
-                width: 50
-                height: 50
+                width: 40
+                height: 40
                 visible: modelData.isActive
             }
 
             //for not active images
             Image {
-                Layout.alignment: parent
+                // Layout.alignment: parent
                 source: modelData.inactivePath
-                width: 50
-                height: 50
+                width: 40
+                height: 40
                 visible: !modelData.isActive
 
             }

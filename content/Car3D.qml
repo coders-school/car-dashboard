@@ -4,6 +4,7 @@ import QtQuick3D 6.4
 import Quick3DAssets.Supra
 import Quick3DAssets.Road_Bend
 import QtQuick.Timeline 1.0
+import Data 1.0 as Data
 
 Item {    
     id: car3DClass
@@ -11,6 +12,7 @@ Item {
     property bool switchDoorLeft: false
     property bool switchDoorTrunk: false
     property string color: "grey"
+    property bool buttonSwitch: true
 
     View3D {
         id: view3D
@@ -50,7 +52,7 @@ Item {
             Supra {
                 id: car3Dmodel
                 x: 2.737
-                y: -83.891
+                y: -55.68
                 eulerRotation.z: -0.00001
                 eulerRotation.y: 320
                 eulerRotation.x: -0
@@ -197,7 +199,7 @@ Item {
         Road_Bend  {
             id: midlleline1
             opacity: 0
-            x: -39.828
+            x: -45.828
             y: -90.865
             eulerRotation.z: 0
             eulerRotation.x: -0.00001
@@ -211,7 +213,7 @@ Item {
         Road_Bend  {
             id: midlleline2
             opacity: 0
-            x: -349.9
+            x: -360.9
             y: -90.865
             eulerRotation.z: 0
             eulerRotation.x: -0.00001
@@ -274,13 +276,17 @@ Item {
         property: "positionV"
         from: 0
         to: 1
-        duration: 1000
+        duration: 700
         loops: -1
     }
 
+    Item{
+        id:buttonsSWITCH
+        enabled: buttonSwitch
+
     RoundButton {
         id:switchLefttdoor
-        x: 126
+        x: 86
         y: 262
         width: 69
         height: 57
@@ -289,12 +295,6 @@ Item {
             anchors.fill: parent
             hoverEnabled: true
 
-            onEntered: {
-                leftdoor.scale = 1.1
-            }
-            onExited: {
-                leftdoor.scale = 1
-            }
             onClicked: {
                 car3DClass.state = "leftdoorChange"
                 leftDoorAnim.running = true
@@ -332,6 +332,8 @@ Item {
             width: 56
             height: 50
             source: "images/leftdoor.png"
+            anchors.verticalCenterOffset: -20
+            anchors.horizontalCenterOffset: 0
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
             color: "#d2d2d2"
@@ -340,21 +342,19 @@ Item {
 
     RoundButton {
         id:switchTrunk
-        x: 422
-        y: 453
+        x: 417
+        y: 444
         width: 69
         height: 57
 
         MouseArea {
             anchors.fill: parent
+            anchors.leftMargin: -7
+            anchors.rightMargin: 7
+            anchors.topMargin: 4
+            anchors.bottomMargin: -4
             hoverEnabled: true
 
-            onEntered: {
-                trunk.scale = 1.1
-            }
-            onExited: {
-                trunk.scale = 1
-            }
             onClicked: {
                 car3DClass.state = "trunkChange"
                 trunkAnim.running = true
@@ -393,8 +393,8 @@ Item {
             width: 56
             height: 46
             source: "images/trunk.png"
-            anchors.verticalCenterOffset: -1
-            anchors.horizontalCenterOffset: 6
+            anchors.verticalCenterOffset: 4
+            anchors.horizontalCenterOffset: -7
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
             color: "#bbbbbb"
@@ -403,7 +403,7 @@ Item {
 
     RoundButton {
         id:switchRightdoor
-        x: 716
+        x: 735
         y: 262
         width: 69
         height: 57
@@ -412,12 +412,6 @@ Item {
             anchors.fill: parent
             hoverEnabled: true
 
-            onEntered: {
-                rightdoor.scale = 1.1
-            }
-            onExited: {
-                rightdoor.scale = 1
-            }
             onClicked: {
                 car3DClass.state = "rightdoorChange"
                 rightDoorAnim.running = true
@@ -444,8 +438,6 @@ Item {
             }
         }
 
-
-
         background: Rectangle {
             color: "transparent"
         }
@@ -457,14 +449,18 @@ Item {
             width: 56
             height: 50
             source: "images/rightdoor.png"
+            anchors.verticalCenterOffset: -24
+            anchors.horizontalCenterOffset: 5
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
             color: "#d2d2d2"
         }
     }
+    }
 
     Button {
         id:buttonDay
+        visible: false
         x: 131
         y: 0
         onClicked: {
@@ -474,6 +470,7 @@ Item {
 
     Button {
         id:buttonNight
+        visible: false
         x: 200
         y: 0
         onClicked: {
@@ -483,6 +480,7 @@ Item {
 
     Switch {
         enabled: false
+        visible: false
         id: switchLeft
         x: 200
         y: 54
@@ -494,6 +492,7 @@ Item {
 
     Switch {
         enabled: false
+        visible: false
         id: switchRight
         x: 600
         y: 54
@@ -503,6 +502,7 @@ Item {
 
     Switch {
         enabled: false
+        visible: false
         id: switcheTrunk
         x: 400
         y: 54
@@ -512,6 +512,7 @@ Item {
 
     Switch {
         enabled: false
+        visible: false
         id: switchdaynight
         checked: if(daynightswitch) {
                      buttonNight.clicked()
@@ -524,11 +525,12 @@ Item {
                  }
     }
 
+
     RoundButton{
         id:switchDrive
         x: 422
-        y: 113
-        width: 69
+        y: 54
+        width: 64
         height: 57
         enabled: false
         MouseArea {
@@ -555,6 +557,8 @@ Item {
             width: 46
             height: 45
             source: "images/steering-wheel.png"
+            anchors.verticalCenterOffset: 6
+            anchors.horizontalCenterOffset: -6
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
             color: "#e1e1e1"
@@ -638,7 +642,7 @@ Item {
             PropertyChanges {
                 target: sceneCamera
                 x: 5.163
-                y: 313.123
+                y: 260.0
                 eulerRotation.z: 0
                 eulerRotation.y: -0
                 eulerRotation.x: -5.69537
@@ -680,12 +684,7 @@ Item {
             PropertyChanges {
                 target: linesAnimation
                 running: true
-            }
-
-            PropertyChanges {
-                target: drive
-                color: "darkgreen"
-            }
+            }           
 
             PropertyChanges {
                 target: road
@@ -695,7 +694,7 @@ Item {
             PropertyChanges {
                 target: linesAnimation
                 running: true
-            }
+            }           
 
             PropertyChanges {
                 target: drive
@@ -709,7 +708,7 @@ Item {
             PropertyChanges {
                 target: sceneCamera
                 x: 5.163
-                y: 313.123
+                y: 260.0
                 eulerRotation.z: 0
                 eulerRotation.y: -0
                 eulerRotation.x: -5.69537
@@ -760,6 +759,7 @@ Item {
                 target: drive
                 color: "darkgreen"
             }
+
         },
 
         State {
@@ -768,7 +768,7 @@ Item {
             PropertyChanges {
                 target: sceneCamera
                 x: 5.163
-                y: 313.123
+                y: 260.0
                 eulerRotation.z: 0
                 eulerRotation.y: -0
                 eulerRotation.x: -5.69537
@@ -826,12 +826,7 @@ Item {
             PropertyChanges {
                 target: directionalLight
                 brightness: 0.5
-            }
-
-            PropertyChanges {
-                target: drive
-                color: "darkgreen"
-            }
+            }            
         }
     ]
 
