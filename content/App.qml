@@ -7,8 +7,8 @@ import CarDashboard
 import QtQuick.Layouts
 
 Window {
-    id:window
-    width: Constants.width
+    id:gaugeWindow
+    width: Constants.width * 2/3
     height: Constants.height
 
     property bool daynightswitch: false
@@ -63,22 +63,21 @@ Window {
             }
         }
 
-        MenuButton {
-            id: menuButton
-            height: parent.height
-        }
-
         Gauges {
             id: gauges
-
-            anchors {
-                top: parent.top
-                left: parent.left
-                right:menuButton.left
-            }
-
-            height: parent.height
+            anchors.centerIn: parent
         }
+
+        Window {
+        id:menuWindow
+        width: Constants.width * 3/5
+        height: Constants.height * 1.8
+        visible: true
+
+
+        MenuButton {
+            id: menuButton            
+        }           
 
         StackLayout {
             id: layout
@@ -87,20 +86,13 @@ Window {
                 right: parent.right
                 left:menuButton.right
             }
-
             height: parent.height
             currentIndex: menuButton.actualWindow
 
             Car3D {
                 id: car3D
                 anchors.fill: parent
-            }
-
-            AirCondition {
-                id: ac
-                anchors.fill: parent
-                focus: true
-            }
+            }          
 
             PhoneList {
                 id: phonList
@@ -116,6 +108,14 @@ Window {
                 id: navigation
                 anchors.fill: parent
             }
+        }
+
+        AirCondition {
+            id: ac
+            anchors.fill: parent
+            focus: true
+        }
+
         }
 
         StateGroup {

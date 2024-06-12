@@ -3,12 +3,12 @@ import QtQuick.Controls 2.15
 
 Column {
     property int actualWindow: 0
-    id:column
+    id:row
     width:100
-    topPadding: 50
-    height: parent.height
-    anchors.centerIn: parent
-    spacing: 50
+    // height: parent.height
+    // anchors.centerIn: parent
+    topPadding: 30
+    spacing: 20
 
     Button {
         id: car3dButton
@@ -19,14 +19,14 @@ Column {
         }
     }
 
-    Button {
-        id: acButton
-        anchors.horizontalCenter: parent.horizontalCenter
-        text: "A/C"
-        onClicked: {
-            actualWindow = 1
-        }
-    }
+    // Button {
+    //     id: acButton
+    //     anchors.horizontalCenter: parent.horizontalCenter
+    //     text: "A/C"
+    //     onClicked: {
+    //         actualWindow = 1
+    //     }
+    // }
 
     Button {
         id: phonecallingButton
