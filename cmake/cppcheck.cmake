@@ -5,8 +5,8 @@ if(NOT CPPCHECK)
 else()
     message(STATUS "cppcheck was found, 'cppcheck-check' target can be used")
     cmake_host_system_information(RESULT N_PROC QUERY NUMBER_OF_LOGICAL_CORES)
-    
-    add_custom_target(cppcheck-check COMMAND ${CPPCHECK} 
+
+    add_custom_target(cppcheck-check COMMAND ${CPPCHECK}
         --cppcheck-build-dir=${CMAKE_BINARY_DIR}/cppcheck
         --enable=all
         --error-exitcode=1

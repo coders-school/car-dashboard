@@ -15,7 +15,7 @@ Column {
         id: car3dButton
         width: 60
         height: 50
-        anchors.horizontalCenter: parent.horizontalCenter        
+        anchors.horizontalCenter: parent.horizontalCenter
         onClicked: {
             actualWindow = 0
             carTurn.focus = true
@@ -45,7 +45,7 @@ Column {
 
     Button {
         id: acButton
-        anchors.horizontalCenter: parent.horizontalCenter        
+        anchors.horizontalCenter: parent.horizontalCenter
         width: 60
         height: 60
         onClicked: {
@@ -168,4 +168,3 @@ Column {
         }
     }
 }
-

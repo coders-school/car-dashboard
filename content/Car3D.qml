@@ -6,7 +6,7 @@ import Quick3DAssets.Road_Bend
 import QtQuick.Timeline 1.0
 import Data 1.0 as Data
 
-Item {    
+Item {
     id: car3DClass
     property bool switchDoorRight: false
     property bool switchDoorLeft: false
@@ -268,7 +268,7 @@ Item {
             to: 50
             duration: 600
         }
-    }   
+    }
 
     NumberAnimation {
         id:linesAnimation
@@ -398,7 +398,7 @@ Item {
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
             color: "#bbbbbb"
-        }       
+        }
     }
 
     RoundButton {
@@ -408,7 +408,7 @@ Item {
         width: 69
         height: 57
 
-        MouseArea {            
+        MouseArea {
             anchors.fill: parent
             hoverEnabled: true
 
@@ -464,7 +464,7 @@ Item {
         x: 131
         y: 0
         onClicked: {
-            dayAnim.running = true            
+            dayAnim.running = true
         }
     }
 
@@ -520,7 +520,7 @@ Item {
                      true
                  } else {
                      buttonDay.clicked()
-                     carLights.visible = false                   
+                     carLights.visible = false
                      false
                  }
     }
@@ -684,7 +684,7 @@ Item {
             PropertyChanges {
                 target: linesAnimation
                 running: true
-            }           
+            }
 
             PropertyChanges {
                 target: road
@@ -694,7 +694,7 @@ Item {
             PropertyChanges {
                 target: linesAnimation
                 running: true
-            }           
+            }
 
             PropertyChanges {
                 target: drive
@@ -826,13 +826,13 @@ Item {
             PropertyChanges {
                 target: directionalLight
                 brightness: 0.5
-            }            
+            }
         }
     ]
 
     transitions:[
 
-        Transition {            
+        Transition {
             NumberAnimation {
                 properties: "eulerRotation.y, x, y, z,  eulerRotation.z, eulerRotation.x, opacity, brightness"
                 duration: 1000

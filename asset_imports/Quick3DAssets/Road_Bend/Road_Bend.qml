@@ -9,7 +9,7 @@ Node {
     property real scaletexture: 4
 
     Model {
-        id: road        
+        id: road
         depthBias: 0
         inverseBindPoses: [
             Qt.matrix4x4(0, -0.999919, 0.012769, 0, 1, 0, 0, 0, 0, 0.012769, 0.999919, 0, 0, 0, 0, 1),

@@ -10,7 +10,7 @@ else()
         -i
         ${ALL_FILES}
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        USES_TERMINAL 
+        USES_TERMINAL
         COMMENT "Formatting code with Clang-Format"
     )
 

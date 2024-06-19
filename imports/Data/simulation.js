@@ -298,6 +298,3 @@ function getCurrentTime() {
     var timeString = hours + ":" + minutes ;
     return timeString;
 }
-
-
-
