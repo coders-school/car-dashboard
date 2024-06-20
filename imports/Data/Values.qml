@@ -63,17 +63,17 @@ QtObject {
        property bool left_active: false
        property bool right_active: false
 
-       property bool checkEngine_active: false
-       property bool charging_active: false
-       property bool abs_active: false
-       property bool cruiseControl_active: false
-       property bool doorOpen_active: false
-       property bool esp_active: false
-       property bool imobilizer_active: false
-       property bool parkingBrake_active: false
-       property bool seatBelt_active: false
-       property bool sterringFault_active: false
-       property bool antiFog_active: false
+    //    property bool checkEngine_active: false
+    //    property bool charging_active: false
+    //    property bool abs_active: false
+    //    property bool cruiseControl_active: false
+    //    property bool doorOpen_active: false
+    //    property bool esp_active: false
+    //    property bool imobilizer_active: false
+    //    property bool parkingBrake_active: false
+    //    property bool seatBelt_active: false
+    //    property bool sterringFault_active: false
+    //    property bool antiFog_active: false
 
     //    property int rpm_gaugeINT: carInfo.engineRPM
     //    property int kmh_gaugeINT: carInfo.speed

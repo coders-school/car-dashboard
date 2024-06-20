@@ -14,31 +14,19 @@ RowLayout {
     width: 800
     height: 50
 
-    property bool checkEngine_active: false
-    property bool charging_active: false
-    property bool abs_active: false
-    property bool cruiseControl_active: false
-    property bool doorOpen_active: false
-    property bool esp_active: false
-    property bool imobilizer_active: false
-    property bool parkingBrake_active: false
-    property bool seatBelt_active: false
-    property bool sterringFault_active: false
-    property bool antiFog_active: false
-
     Repeater {
        model: [
-     { activePath: "Icons/charging_active.svg", inactivePath: "Icons/charging_NotActive.svg", isActive: charging_active, x: 0, y: 0 },
-     { activePath: "Icons/CheckEngine_active.svg", inactivePath: "Icons/CheckEngine_NotActive.svg", isActive: checkEngine_active, x: 80, y: 0 },
-     { activePath: "Icons/CruiseControl_active.svg", inactivePath: "Icons/CruiseControl_NotActive.svg", isActive: cruiseControl_active, x: 160, y:0 },
-     { activePath: "Icons/ABS_active.svg", inactivePath: "Icons/ABS_NotActive.svg", isActive: abs_active, x: 240, y: 0 },
-     { activePath: "Icons/DoorOpen_active.svg", inactivePath: "Icons/DoorOpen_NotActive.svg", isActive: doorOpen_active, x: 320, y: 0 },
-     { activePath: "Icons/ESP_active.svg", inactivePath: "Icons/ESP_NotActive.svg", isActive: esp_active, x: 400, y: 0 },
-     { activePath: "Icons/Imobilizer_fault.svg", inactivePath: "Icons/Imobilizer_NotFault.svg", isActive: imobilizer_active, x: 480, y: 0 },
-     { activePath: "Icons/ParkingBreak_active.svg", inactivePath: "Icons/ParkingBreak_NotActive.svg", isActive: parkingBrake_active, x: 560, y: 0 },
-     { activePath: "Icons/SeatBelt_active.svg", inactivePath: "Icons/SeatBelt_NotActive.svg", isActive: seatBelt_active, x: 640, y: 0 },
-     { activePath: "Icons/SterringFault_active.svg", inactivePath: "Icons/SterringFault_NotActive.svg",isActive: sterringFault_active, x: 720, y: 0 },
-     { activePath: "Icons/LightIcons/AntiFog_active.svg", inactivePath:"Icons/LightIcons/AntiFog_NotActive.svg",isActive: antiFog_active, x: 800, y: 0 },
+     { activePath: "Icons/charging_active.svg", inactivePath: "Icons/charging_NotActive.svg", isActive: carControlsInfo.charging, x: 0, y: 0 },
+     { activePath: "Icons/CheckEngine_active.svg", inactivePath: "Icons/CheckEngine_NotActive.svg", isActive: carControlsInfo.checkEngine, x: 80, y: 0 },
+     { activePath: "Icons/CruiseControl_active.svg", inactivePath: "Icons/CruiseControl_NotActive.svg", isActive: carControlsInfo.cruiseControl, x: 160, y:0 },
+     { activePath: "Icons/ABS_active.svg", inactivePath: "Icons/ABS_NotActive.svg", isActive: carControlsInfo.abs, x: 240, y: 0 },
+     { activePath: "Icons/DoorOpen_active.svg", inactivePath: "Icons/DoorOpen_NotActive.svg", isActive: carControlsInfo.doorOpen, x: 320, y: 0 },
+     { activePath: "Icons/ESP_active.svg", inactivePath: "Icons/ESP_NotActive.svg", isActive: carControlsInfo.esp, x: 400, y: 0 },
+     { activePath: "Icons/Imobilizer_fault.svg", inactivePath: "Icons/Imobilizer_NotFault.svg", isActive: carControlsInfo.imobilizer, x: 480, y: 0 },
+     { activePath: "Icons/ParkingBreak_active.svg", inactivePath: "Icons/ParkingBreak_NotActive.svg", isActive: carControlsInfo.parkingBrake, x: 560, y: 0 },
+     { activePath: "Icons/SeatBelt_active.svg", inactivePath: "Icons/SeatBelt_NotActive.svg", isActive: carControlsInfo.seatBelt, x: 640, y: 0 },
+     { activePath: "Icons/SterringFault_active.svg", inactivePath: "Icons/SterringFault_NotActive.svg",isActive: carControlsInfo.sterringFault, x: 720, y: 0 },
+     { activePath: "Icons/LightIcons/AntiFog_active.svg", inactivePath:"Icons/LightIcons/AntiFog_NotActive.svg",isActive: carControlsInfo.antiFog, x: 800, y: 0 },
         ]
 
         delegate: RowLayout {

@@ -8,6 +8,7 @@
 
 #include "airCondition/Controller.hpp"
 #include "CarInfo.hpp"
+#include "CarControlsInfo.hpp"
 #include "app_environment.h"
 #include "import_qml_plugins.h"
 
@@ -16,6 +17,7 @@ int main(int argc, char *argv[]) {
 
     auto airConditionController = std::make_unique<AirCondition::Controller>();
     auto carInfo = std::make_unique<CarInfo>();
+    auto carControlsInfo = std::make_unique<CarControlsInfo>();
 
     QGuiApplication app(argc, argv);
 
@@ -31,6 +33,7 @@ int main(int argc, char *argv[]) {
 
     engine.rootContext()->setContextProperty("airConditionController", airConditionController.get());
     engine.rootContext()->setContextProperty("carInfo", carInfo.get());
+    engine.rootContext()->setContextProperty("carControlsInfo", carControlsInfo.get());
 
     engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
     engine.addImportPath(":/");

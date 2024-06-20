@@ -76,17 +76,6 @@ Item {
                 scale: 0.6
                 x: 31
                 y: 456
-                parkingBrake_active: Data.Values.parkingBrake_active
-                esp_active: Data.Values.esp_active
-                cruiseControl_active: Data.Values.cruiseControl_active
-                charging_active: Data.Values.charging_active
-                antiFog_active: Data.Values.antiFog_active
-                abs_active: Data.Values.abs_active
-                checkEngine_active: Data.Values.checkEngine_active
-                doorOpen_active: Data.Values.doorOpen_active
-                imobilizer_active: Data.Values.imobilizer_active
-                seatBelt_active: Data.Values.seatBelt_active
-                sterringFault_active: Data.Values.sterringFault_active
 
             }
             Text {
