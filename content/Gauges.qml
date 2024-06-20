@@ -36,7 +36,7 @@ Item {
                 enabled: false
                 width: 500
                 height: 500
-                kmh_gauge: Data.Values.kmh_gaugeINT
+                kmh_gauge: carInfo.speed
                 kmh_string: Data.Values.kmh_gaugeString
                 scale: 0.75
             }
@@ -51,7 +51,7 @@ Item {
                 id: rpmGauge
                 x: -31
                 y: 17
-                rpmFrame: Data.Values.rpm_gaugeINT
+                rpmFrame: carInfo.engineRPM
                 scale: 0.65
             }
             EngineTemp {
