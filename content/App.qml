@@ -55,7 +55,7 @@ Window {
         }
 
         Button {
-            x:100
+            x: 100
             text:"night"
             onClicked: {
                 stateGroup.state = "Night"
@@ -69,52 +69,53 @@ Window {
         }
 
         Window {
-        id:menuWindow
-        width: Constants.width * 3/5
-        height: Constants.height * 1.8
-        visible: true
+            id:menuWindow
+            width: Constants.width / 2
+            height: Constants.height * 1.9
+            visible: true
 
 
-        MenuButton {
-            id: menuButton            
-        }           
-
-        StackLayout {
-            id: layout
-            anchors {
-                top: parent.top
-                right: parent.right
-                left:menuButton.right
-            }
-            height: parent.height
-            currentIndex: menuButton.actualWindow
-
-            Car3D {
-                id: car3D
-                anchors.fill: parent
-            }          
-
-            PhoneList {
-                id: phonList
-                anchors.fill: parent
+            MenuButton {
+                id: menuButton
             }
 
-            MusicPlayer {
-                id: musicPlayer
-                anchors.fill: parent
+            StackLayout {
+                id: layout
+                anchors {
+                    top: parent.top
+                    right: parent.right
+                    left: menuButton.right
+                    bottom: ac.top
+                }
+                height: parent.height
+                currentIndex: menuButton.actualWindow
+
+                Car3D {
+                    id: car3D
+                    anchors.fill: parent
+                }
+
+                PhoneList {
+                    id: phonList
+                    anchors.fill: parent
+                }
+
+                MusicPlayer {
+                    id: musicPlayer
+                    anchors.fill: parent
+                }
+
+                Navigation {
+                    id: navigation
+                    anchors.fill: parent
+                }
             }
 
-            Navigation {
-                id: navigation
-                anchors.fill: parent
+            AirCondition {
+                id: ac
+                anchors.bottom: parent.bottom
+                focus: true
             }
-        }
-
-        AirCondition {
-            id: ac
-            anchors.fill: parent
-            focus: true
-        }
 
         }
 

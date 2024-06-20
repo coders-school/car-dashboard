@@ -33,7 +33,7 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
         text: "PhoneCalling"
         onClicked: {
-            actualWindow = 2
+            actualWindow = 1
         }
     }
 
@@ -42,7 +42,7 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
         text: "MusicPlayer"
         onClicked: {
-            actualWindow = 3
+            actualWindow = 2
         }
     }
 
@@ -51,7 +51,7 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
         text: "Navigation"
         onClicked: {
-            actualWindow = 4
+            actualWindow = 3
         }
     }
 }

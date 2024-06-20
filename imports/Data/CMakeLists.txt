@@ -12,6 +12,7 @@ qt_add_library(Data STATIC)
 qt6_add_qml_module(Data
     URI "Data"
     VERSION 1.0
+    RESOURCE_PREFIX "/qt/qml"
     QML_FILES
         Values.qml
     RESOURCES

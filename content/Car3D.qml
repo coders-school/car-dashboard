@@ -14,13 +14,18 @@ Item {
 
     View3D {
         id: view3D
-        anchors.fill: parent
+        x: -7
+        y: -104
+        width: 872
+        height: 900
         environment: sceneEnvironment
 
         SceneEnvironment {
             id: sceneEnvironment
+            temporalAAEnabled: true
+            specularAAEnabled: true
             antialiasingMode: SceneEnvironment.MSAA
-            antialiasingQuality: SceneEnvironment.High
+            antialiasingQuality: SceneEnvironment.VeryHigh
         }
 
         Node {
@@ -39,22 +44,22 @@ Item {
 
             PerspectiveCamera {
                 id: sceneCamera
-                x: 5.163
-                y: 76.679
+                x: 66.493
+                y: 102.314
                 eulerRotation.z: 0
                 eulerRotation.y: -0
-                eulerRotation.x: -12.1467
-                z: 336.44199
+                eulerRotation.x: -10.11087
+                z: 393.56491
             }
 
             Supra {
                 id: car3Dmodel
-                x: 2.737
-                y: -83.891
+                x: 72.862
+                y: -26.457
                 eulerRotation.z: -0.00001
-                eulerRotation.y: 320
-                eulerRotation.x: -0
-                z: -56.1745
+                eulerRotation.y: -90.56513
+                eulerRotation.x: -0.00001
+                z: -95.91513
                 scale: Qt.vector3d(80, 80, 80)
 
                 Node{

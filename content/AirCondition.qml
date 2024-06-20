@@ -5,7 +5,7 @@ import QtQuick.Controls 2.15
 Item {
     id: main
     width: 860
-    height: 540
+    height: 330
 
     property int buttonWidth: 100;
     property int buttonHeight: 50;
@@ -249,8 +249,8 @@ Item {
 
     Text {
         id: currentTemperatureText
-        x: 688
-        y: 50
+        x: 28
+        y: 8
         text: (airConditionController.currentTemp).toFixed(1) + qsTr("ºC")
         font.pixelSize: 32
     }
