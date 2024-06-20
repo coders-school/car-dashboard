@@ -99,20 +99,20 @@ var carMoving
     function setEngineTemp() { values.currentEngineTemperatureInt = (engineTempInt) }
     function setFuelLevel() { values.fuelLevelInt = (fuelLevelInt)}
 /* bool values*/
-    function setHighBeam() { values.highBeam_active = (highBeam)}
-    function setLeftBlink() { values.left_active = (leftBlink)}
-    function setRightBlink() { values.right_active = (rightBlink)}
-    function setCheckEngine() {values.checkEngine_active = (checkEngine) }
-    function setCharging() { values.charging_active = (charging); }
-    function setAbs() { values.abs_active = (abs); }
-    function setCruiseControl() { values.cruiseControl_active = (cruiseControl); }
-    function setDoorOpen() { values.doorOpen_active = (doorOpen); }
-    function setEsp() { values.esp_active = (esp); }
-    function setImobilizer() { values.imobilizer_active = (imobilizer); }
-    function setParkingBrake() { values.parkingBrake_active = (parkingBrake); }
-    function setSeatBelt() { values.seatBelt_active = (seatBelt); }
-    function setSterringFault() { values.sterringFault_active = (sterringFault); }
-    function setAntiFog() { values.antiFog_active = (antiFog); }
+    function setHighBeam() { carControlsInfo.highBeam = (highBeam)}
+    function setLeftBlink() { carControlsInfo.left = (leftBlink)}
+    function setRightBlink() { carControlsInfo.right = (rightBlink)}
+    function setCheckEngine() {carControlsInfo.checkEngine = (checkEngine) }
+    function setCharging() { carControlsInfo.charging = (charging); }
+    function setAbs() { carControlsInfo.abs = (abs); }
+    function setCruiseControl() { carControlsInfo.cruiseControl = (cruiseControl); }
+    function setDoorOpen() { carControlsInfo.doorOpen = (doorOpen); }
+    function setEsp() { carControlsInfo.esp = (esp); }
+    function setImobilizer() { carControlsInfo.imobilizer = (imobilizer); }
+    function setParkingBrake() { carControlsInfo.parkingBrake = (parkingBrake); }
+    function setSeatBelt() { carControlsInfo.seatBelt = (seatBelt); }
+    function setSterringFault() { carControlsInfo.sterringFault = (sterringFault); }
+    function setAntiFog() { carControlsInfo.antiFog = (antiFog); }
 
     function setCarMoving(){ values.carMoving =- (carMoving);}
 
