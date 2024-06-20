@@ -75,8 +75,8 @@ QtObject {
        property bool sterringFault_active: false
        property bool antiFog_active: false
 
-       property int rpm_gaugeINT:0
-       property int kmh_gaugeINT:0
+    //    property int rpm_gaugeINT: carInfo.engineRPM
+    //    property int kmh_gaugeINT: carInfo.speed
        property string kmh_gaugeString :"0"
        property int fuelLevelInt:0
        property int currentEngineTemperatureInt: 0       

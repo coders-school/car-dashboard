@@ -93,8 +93,8 @@ var carMoving
 /* ======================== Set values =================*/
 
 /* RPM gauge */
-    function setArrowRpm() { values.rpm_gaugeINT  =(rpm_arrowCounter) }
-    function setArrowKmh() { values.kmh_gaugeINT =(kmh_arrowCounter) }
+    function setArrowRpm() { carInfo.engineRPM  =(rpm_arrowCounter) }
+    function setArrowKmh() { carInfo.speed =(kmh_arrowCounter) }
     function setDisplayKph() { values.kmh_gaugeString = (Math.round(kmh_arrowCounter))}
     function setEngineTemp() { values.currentEngineTemperatureInt = (engineTempInt) }
     function setFuelLevel() { values.fuelLevelInt = (fuelLevelInt)}
