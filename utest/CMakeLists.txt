@@ -30,7 +30,7 @@ message(FATAL_ERROR "You need Qt 6.2.0 or newer to build the application.")
 endif()
 
 
-set(SOURCES_TEST 
+set(SOURCES_TEST
     ${ALL_FILES}
 )
 LIST(FILTER SOURCES_TEST EXCLUDE
@@ -66,8 +66,6 @@ install(TARGETS ${PROJECT_NAME}
 
 
 add_test(
-    NAME ${PROJECT_NAME} 
-    COMMAND ${PROJECT_NAME} 
+    NAME ${PROJECT_NAME}
+    COMMAND ${PROJECT_NAME}
 )
-
-

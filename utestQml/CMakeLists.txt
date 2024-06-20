@@ -30,7 +30,7 @@ FILE(GLOB SOURCES_QMLTEST
     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
 )
 
-qt_add_executable(${PROJECT_NAME} 
+qt_add_executable(${PROJECT_NAME}
     ${SOURCES_QMLTEST}
 )
 
@@ -48,7 +48,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 
 if (${BUILD_QDS_COMPONENTS})
-    
+
     target_link_libraries(${PROJECT_NAME} PRIVATE
         QuickStudioComponentsplugin
         QuickStudioEffectsplugin
@@ -77,7 +77,6 @@ install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 add_test(
-    NAME ${PROJECT_NAME} 
-    COMMAND ${PROJECT_NAME} 
+    NAME ${PROJECT_NAME}
+    COMMAND ${PROJECT_NAME}
 )
-

@@ -44,7 +44,7 @@ Window {
             height: 104
 
             onClicked: {
-                wheatherButton.clicked()                
+                wheatherButton.clicked()
             }
 
             ColorImage {
@@ -100,7 +100,7 @@ Window {
             x:menuButton.x
             y:menuButton.y
             height: menuButton.height
-            width: menuButton.width            
+            width: menuButton.width
             z:1
             gradient: Gradient {
                 GradientStop { position:0.1; color: "transparent"}
@@ -146,7 +146,7 @@ Window {
                     daynightswitch = true
                     carTurn.focus = true
                     mainWindow.enabled = true
-                    startWindow.enabled = false                    
+                    startWindow.enabled = false
                 } else {
                     sun.visible = true
                     moon.visible = false
@@ -264,19 +264,19 @@ Window {
             }
 
             AirCondition {
-                id: ac                
+                id: ac
             }
 
             PhoneList {
-                id: phonList                
+                id: phonList
             }
 
             MusicPlayer {
-                id: musicPlayer                
+                id: musicPlayer
             }
 
             Navigation {
-                id: navigation                
+                id: navigation
             }
         }
 

@@ -79,7 +79,7 @@ QtObject {
        property int kmh_gaugeINT:0
        property string kmh_gaugeString :"0"
        property int fuelLevelInt:0
-       property int currentEngineTemperatureInt: 0       
+       property int currentEngineTemperatureInt: 0
 
     /* State change bool */
     property bool booting: true
@@ -97,7 +97,7 @@ QtObject {
         onTriggered: JS.rpmTimer()
         interval: 5
     }
-    property Timer kmhTimer: Timer{        
+    property Timer kmhTimer: Timer{
         running: !values.booting
         repeat: true
         onTriggered: JS.kmhTimer()
