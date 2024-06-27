@@ -16,6 +16,9 @@ class CarControlsInfo : public QObject
     Q_PROPERTY(bool seatBelt MEMBER seatBelt NOTIFY seatBeltChanged)
     Q_PROPERTY(bool sterringFault MEMBER sterringFault NOTIFY sterringFaultChanged)
     Q_PROPERTY(bool antiFog MEMBER antiFog NOTIFY antiFogChanged)
+    Q_PROPERTY(bool leftSignal MEMBER leftSignal NOTIFY leftSignalChanged)
+    Q_PROPERTY(bool rightSignal MEMBER rightSignal NOTIFY rightSignalChanged)
+    Q_PROPERTY(bool highBeamActive MEMBER highBeamActive NOTIFY highBeamActiveChanged)
 
 public:
     explicit CarControlsInfo(QObject *parent = nullptr);
@@ -32,6 +35,10 @@ signals:
     void seatBeltChanged(bool);
     void sterringFaultChanged(bool);
     void antiFogChanged(bool);
+    void leftSignalChanged(bool);
+    void rightSignalChanged(bool);
+    void highBeamActiveChanged(bool);
+
 
 private:
     bool checkEngine{};
@@ -45,4 +52,8 @@ private:
     bool seatBelt{};
     bool sterringFault{};
     bool antiFog{};
+    bool leftSignal{};
+    bool rightSignal{};
+    bool highBeamActive{};
+
 };
