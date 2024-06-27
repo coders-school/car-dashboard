@@ -37,7 +37,7 @@ Item {
                 width: 500
                 height: 500
                 kmh_gauge: carInfo.speed
-                kmh_string: Data.Values.kmh_gaugeString
+                kmh_string: carInfo.speed
                 scale: 0.75
             }
             FuelLevel {
@@ -45,7 +45,7 @@ Item {
                 x: 479
                 y: 356
                 scale: 0.6
-                fuelLevel: Data.Values.fuelLevelInt
+                fuelLevel: carInfo.fuelLevel
             }
             RPMGauge {
                 id: rpmGauge
@@ -59,7 +59,7 @@ Item {
                 x: 32
                 y: 359
                 scale: 0.55
-                currentEngineTemperature: Data.Values.currentEngineTemperatureInt
+                currentEngineTemperature: carInfo.engineTemperature
             }
             IconsLight {
                 id: iconsLight
@@ -67,16 +67,15 @@ Item {
                 y: 113
                 width: 144
                 height: 40
-                highBeam_active: Data.Values.highBeam_active
-                left_active: Data.Values.left_active
-                right_active: Data.Values.right_active
+                highBeam_active: carControlsInfo.highBeamActive
+                left_active: carControlsInfo.leftSignal
+                right_active: carControlsInfo.rightSignal
             }
             IconsMain {
                 id: iconsMain
                 scale: 0.6
                 x: 31
                 y: 456
-
             }
             Text {
                 id: totalMilage

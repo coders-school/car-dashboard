@@ -59,9 +59,9 @@ QtObject {
 
        property string time:"00:00"
 
-       property bool highBeam_active: false
-       property bool left_active: false
-       property bool right_active: false
+       // property bool highBeam_active: false
+       // property bool left_active: false
+       // property bool right_active: false
 
     //    property bool checkEngine_active: false
     //    property bool charging_active: false
@@ -77,9 +77,9 @@ QtObject {
 
     //    property int rpm_gaugeINT: carInfo.engineRPM
     //    property int kmh_gaugeINT: carInfo.speed
-       property string kmh_gaugeString :"0"
-       property int fuelLevelInt:0
-       property int currentEngineTemperatureInt: 0
+       // property string kmh_gaugeString :"0"
+       // property int fuelLevelInt:0
+       // property int currentEngineTemperatureInt: 0
 
     /* State change bool */
     property bool booting: true

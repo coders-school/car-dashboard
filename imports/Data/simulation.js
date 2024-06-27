@@ -95,13 +95,13 @@ var carMoving
 /* RPM gauge */
     function setArrowRpm() { carInfo.engineRPM  =(rpm_arrowCounter) }
     function setArrowKmh() { carInfo.speed =(kmh_arrowCounter) }
-    function setDisplayKph() { values.kmh_gaugeString = (Math.round(kmh_arrowCounter))}
-    function setEngineTemp() { values.currentEngineTemperatureInt = (engineTempInt) }
-    function setFuelLevel() { values.fuelLevelInt = (fuelLevelInt)}
+    function setDisplayKph() { carInfo.speed = (Math.round(kmh_arrowCounter))}
+    function setEngineTemp() { carInfo.engineTemperature = (engineTempInt) }
+    function setFuelLevel() { carInfo.fuelLevel = (fuelLevelInt)}
 /* bool values*/
-    function setHighBeam() { carControlsInfo.highBeam = (highBeam)}
-    function setLeftBlink() { carControlsInfo.left = (leftBlink)}
-    function setRightBlink() { carControlsInfo.right = (rightBlink)}
+    function setHighBeam() { carControlsInfo.highBeamActive = (highBeam)}
+    function setLeftBlink() { carControlsInfo.leftSignal = (leftBlink)}
+    function setRightBlink() { carControlsInfo.rightSignal = (rightBlink)}
     function setCheckEngine() {carControlsInfo.checkEngine = (checkEngine) }
     function setCharging() { carControlsInfo.charging = (charging); }
     function setAbs() { carControlsInfo.abs = (abs); }
