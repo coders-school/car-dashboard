@@ -76,7 +76,6 @@ Item {
                 scale: 0.6
                 x: 31
                 y: 456
-
             }
             Text {
                 id: totalMilage
