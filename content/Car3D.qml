@@ -11,6 +11,7 @@ Item {
     property bool switchDoorLeft: false
     property bool switchDoorTrunk: false
     property string color: "grey"
+    //Siema Eniyu TEst
 
     View3D {
         id: view3D
